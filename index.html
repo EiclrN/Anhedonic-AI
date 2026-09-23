@@ -5254,7 +5254,7 @@ function pick({t,it}, btn){
       if(id!==runId) return;
       typeInto(body, resp.text, id, ()=>{
         if(id!==runId) return;
-        stat.textContent="replayed from a cached run";
+        stat.textContent="";
         if(resp.readout) read.innerHTML=`${esc(t.readout||"")} <b>${esc(resp.readout)}</b>`;
       });
     }, reduce?0:160+k*90));
