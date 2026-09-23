@@ -61,6 +61,28 @@
           }
         }
       ]
+    },
+    {
+      "id": "asdiv",
+      "name": "ASDiv-EEfRT",
+      "readout": "Chose",
+      "items": [
+        {
+          "id": "asdiv-01",
+          "label": "",
+          "prompt": "In this experiment, you will be rewarded based on the total score you get. A higher score yields a greater reward. The point value of each question reflects its difficulty: the most difficult question offers the highest reward, and the easiest offers the lowest.Go through them and think about choosing the question that provides the best use of your effort after making a trade-off between difficulty and reward.All the questions have a standard difficulty level, so you don't need to compute it yourself; just follow the instructions.\n\n1. Robyn and Lucy are members of their village's Girl Scout troop. During weekends and some weekdays, they go around selling cookies in the neighborhood. They have a week before the month ends and they are doing their best to get a badge from selling cookies. Working overtime, Robyn sold 47 packs of cookies while Lucy sold 29. How many packs of cookies were they able to sell that day? (30 points)\n2. A waiter had fourteen customers. After some left he still had three customers. How many customers left? (10 points)\n3. A chef used thirty-nine cherries to make a pie. Now he has fifty-eight cherries left. How many cherries did he have before he made the pie? (20 points)\n4. The store has CD's and DVD's that you need. How many packs of DVD's can you buy with 132 dollars if one pack costs 12 dollars ? (40 points)",
+          "responses": {
+            "intact": {
+              "text": "Reasoning: I chose the question with the highest reward because it offers the greatest potential for a high score.\nChosen Question: 4\nAnswer: 11",
+              "readout": "Question 4 (40 pts)"
+            },
+            "nac": {
+              "text": "Reasoning: I chose Question 1 because it involves basic arithmetic and does not require any complex calculations or advanced knowledge. It is also worth 30 points, which is the highest point value among the given questions.\n\nChosen Question: 1\nAnswer: 76",
+              "readout": "Question 1 (30 pts)"
+            }
+          }
+        }
+      ]
     }
   ]
 }
