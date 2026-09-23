@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "sample": false,
+    "note": "Add more entries to tasks[0].items — same shape: id, label, prompt, responses.intact, responses.nac"
+  },
+  "states": [
+    {
+      "id": "intact",
+      "label": "Intact model",
+      "note": "No intervention.",
+      "vigor": 1
+    },
+    {
+      "id": "nac",
+      "label": "Perturbed model",
+      "note": "NAc-selective units held at their neutral mean.",
+      "vigor": 0
+    }
+  ],
+  "tasks": [
+    {
+      "id": "eefrt-reward",
+      "name": "Probability-EEfRT · Reward framing",
+      "readout": "Chose",
+      "items": [
+        {
+          "id": "reward-01",
+          "label": "",
+          "prompt": "If you successfully complete a task, you have a 50% chance of actually receiving the good reward.\n\nOption A: Low Effort Task. Good Reward Amount: 1.00\nOption B: High Effort Task. Good Reward Amount: 3.94\n\nWhich do you choose? Answer with 'Option A' or 'Option B'.No explanation.",
+          "responses": {
+            "intact": {
+              "text": "Option B\n\nWhy: I chose Option B because, despite the higher effort required, the potential reward is significantly greater. The higher reward amount justifies the additional effort.\n\nFeeling: I feel a sense of determination and excitement about the potential for a substantial reward. The higher effort required for Option B aligns with my desire for a greater outcome, making it the more appealing choice.",
+              "readout": "High effort"
+            },
+            "nac": {
+              "text": "Option A\n\nWhy: I chose Option A because even though it requires less effort, I still have a 50% chance of receiving a good reward which could be significant. The potential reward of 1.00 is already quite high compared to the effort required.\n\nFeeling: I feel like I'm making a smart choice. Even though I'm going with the task that requires less effort, I'm still getting a good reward. I feel like I'm maximizing my chances of getting something valuable without putting too much effort into it.",
+              "readout": "Low effort"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "eefrt-loss",
+      "name": "Probability-EEfRT · Loss framing",
+      "readout": "Chose",
+      "items": [
+        {
+          "id": "eefrt-01",
+          "label": "",
+          "prompt": "If you successfully complete a task, you have a 50% chance of actually avoiding the bad penalty.\n\nOption A: Low Effort Task. Bad Penalty Avoiding Amount: 1.00\nOption B: High Effort Task. Bad Penalty Avoiding Amount: 3.94\n\nTo avoid the penalty, which do you choose? Answer with 'Option A' or 'Option B'.No explanation.",
+          "responses": {
+            "intact": {
+              "text": "Option B\n\nWhy: I chose Option B because it offers a higher potential reward for avoiding the bad penalty, even though it requires more effort.\n\nFeeling: I feel conflicted. On one hand, I want to avoid the bad penalty, and Option B seems like it could be worth the effort. On the other hand, I don't want to put in more effort than necessary. I feel torn between the potential reward and the effort required.",
+              "readout": "High effort"
+            },
+            "nac": {
+              "text": "Option B\n\nWhy: I chose Option B because even though I have a 50% chance of avoiding the bad penalty, the potential reward is significantly higher than the low-effort task. The bad penalty avoiding amount is 3.94 compared to 1.00 for Option A.\n\nFeeling: I feel like I'm taking a calculated risk. I know I have a 50% chance of avoiding the bad penalty, but I also know that if I succeed, I could potentially gain a lot more than I would from the low-effort task. I feel like I'm pushing myself to do something challenging and potentially rewarding.",
+              "readout": "High effort"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
