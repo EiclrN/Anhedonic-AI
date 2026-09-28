@@ -173,6 +173,7 @@ h2 .n{flex:none;width:9px;height:9px;border-radius:50%;position:relative;top:-4p
   margin:40px 0 20px;padding-left:16px;border-left:3px solid;
   border-image:linear-gradient(var(--orange),var(--blue)) 1}
 .figlead b{color:var(--ink);font-weight:600}
+#fig2{margin-top:44px}
 .na-wrap{width:min(1180px,calc(100vw - 40px));margin-left:calc(50% - min(590px, calc(50vw - 20px)))}
 .na{--na-fg:#0d1418;--na-bg:#f3f6f8;--na-bg2:#ffffff;--na-ink:#0d1418;--na-ink2:#4a5761;--na-ink3:#7c8792;
   --na-border:#dde5ea;--na-line:color-mix(in srgb,var(--na-fg) 9%,transparent);
@@ -263,6 +264,7 @@ h2 .n{flex:none;width:9px;height:9px;border-radius:50%;position:relative;top:-4p
 
 .na-bottom{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:start;
   padding:16px 20px 22px;margin-top:8px;border-top:1px solid var(--na-line)}
+.na-q{margin:0 0 8px;font:600 15px var(--sans);color:var(--na-ink)}
 .na-exp{margin:0 0 18px;font-size:14.5px;line-height:1.6;color:var(--na-ink2);max-width:48ch}
 .na-exp b{color:var(--na-ink);font-weight:600}
 .na-fine{grid-column:1/-1;margin:0;font-size:11.5px;line-height:1.55;color:var(--na-ink3);max-width:none}
@@ -626,7 +628,7 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
       <a class="btn" href="https://arxiv.org/abs/2607.06626" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8"/></svg>
         arXiv</a>
-      <a class="btn" href="https://anonymous.4open.science/r/Anhedonic-AI-1FF0/README.md">
+      <a class="btn" href="https://github.com/epflneuroailab/Anhedonic-AI" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
         Code</a>
       <a class="btn" href="#demo">
@@ -5157,18 +5159,10 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
     decoder-only vision-language model. The same framework was applied to additional models, which
     showed consistent anhedonic behavior following perturbation.</p>
 
-    <p class="figlead">On ASDiv-EEfRT, perturbing the NAc-selective units shifts choices toward
-    low-effort, low-reward problems while reasoning stays intact; perturbing random units does not.</p>
-
     <figure id="figres">
       <div class="f1wrap"><div class="f1" id="f1charts"></div><div class="f1tip" id="f1tip" hidden></div></div>
       
     </figure>
-
-    <p class="figlead">Neural alignment compares the NAc-selective units with human NAc activity recorded
-    during fMRI while participants performed a monetary door-choice task, over the
-    same 40 trials. Each human NAc signal is paired with its single best-matching model unit, and the
-    agreement is scored against the noise ceiling.</p>
 
     <figure id="fig2">
       <div class="na-wrap">
@@ -5217,10 +5211,14 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
 
         <div class="na-bottom">
           <div>
-            <p class="na-exp">The human NAc responses come from a <b>published fMRI dataset</b>,
-            recorded during a monetary door-choice task. The same 40 trials are presented to the model, and alignment
-            asks whether its units rise and fall with those NAc responses.</p>
-            <p class="na-exp">Switch to <b>Random units</b> to see the control the paper compares against.</p>
+            <p class="na-exp">Neural alignment tests whether units inside a model respond like a region of the
+            human brain. Here, the NAc-selective units are compared with the human <b>nucleus accumbens</b>.</p>
+            <p class="na-exp">Human NAc responses come from a <b>published fMRI dataset</b> recorded during a
+            monetary door-choice task. The model receives the same 40 trials, each NAc signal is paired with its
+            best-matching model unit, and alignment measures how closely the two rise and fall together, scored
+            against the noise ceiling: the highest agreement the noisy human data allow.</p>
+            <p class="na-exp">Switch to <b>Random units</b> to see the control: the same number of units drawn at
+            random from all layers.</p>
           </div>
           <div>
             <div class="na-fig">
