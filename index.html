@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Reward Valuation in Large Language Models</title>
+<title>Reward Valuation in Large Language Models: Causal Induction of Anhedonia</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjI4NC41IDk3LjUgNDYgNDYiPjxkZWZzPjxjbGlwUGF0aCBpZD0iYnBlMCI+PHBhdGggZD0iTSAyOTkuMTQ0NTMxIDExMS40NTMxMjUgTCAzMDQuNjYwMTU2IDExMS40NTMxMjUgTCAzMDQuNjYwMTU2IDExNi45MDYyNSBMIDI5OS4xNDQ1MzEgMTE2LjkwNjI1IFogTSAyOTkuMTQ0NTMxIDExMS40NTMxMjUgIi8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImJwZTEiPjxwYXRoIGQ9Ik0gMzA5LjY0ODQzOCAxMTEuNDIxODc1IEwgMzE1LjE2NDA2MiAxMTEuNDIxODc1IEwgMzE1LjE2NDA2MiAxMTYuODc1IEwgMzA5LjY0ODQzOCAxMTYuODc1IFogTSAzMDkuNjQ4NDM4IDExMS40MjE4NzUgIi8+PC9jbGlwUGF0aD48L2RlZnM+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMzAuMTk1NjE4JSwgMzAuMTk1NjE4JSwgMzAuMTk1NjE4JSkiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlLXdpZHRoPSIwLjA5MjM3MDIiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9InJnYigzMC45Nzk5MTklLCAyOS44MDM0NjclLCAyNy40NTA1NjIlKSIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1taXRlcmxpbWl0PSI0IiBkPSJNIDMxMS40NDg0MTcgMTA0LjE0MjI2NyBDIDMxMS40NDg0MTcgMTA0Ljg1NjU5MiAzMTAuODcxNDYyIDEwNS40MzM1NDcgMzEwLjE1NzEzNyAxMDUuNDMzNTQ3IEMgMzA5LjQ0MjgxMyAxMDUuNDMzNTQ3IDMwOC44NjE5MzMgMTA0Ljg1NjU5MiAzMDguODYxOTMzIDEwNC4xNDIyNjcgQyAzMDguODYxOTMzIDEwMy40MzE4NjcgMzA5LjQ0MjgxMyAxMDIuODQ3MDYzIDMxMC4xNTcxMzcgMTAyLjg0NzA2MyBDIDMxMC44NzE0NjIgMTAyLjg0NzA2MyAzMTEuNDQ4NDE3IDEwMy40MzE4NjcgMzExLjQ0ODQxNyAxMDQuMTQyMjY3IFogTSAzMTEuNDQ4NDE3IDEwNC4xNDIyNjcgIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjk5NTI1OCwgMCwgMCwgMC45OTUyNTgsIDEuMDQ0MDU4LCAwKSIvPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0icmdiKDIwLjM5MTg0NiUsIDM3LjI1NDMzMyUsIDUyLjU0ODIxOCUpIiBmaWxsLW9wYWNpdHk9IjEiIHN0cm9rZS13aWR0aD0iMC4wOTIzNzAyIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlPSJyZ2IoMzAuOTc5OTE5JSwgMjkuODAzNDY3JSwgMjcuNDUwNTYyJSkiIHN0cm9rZS1vcGFjaXR5PSIxIiBzdHJva2UtbWl0ZXJsaW1pdD0iNCIgZD0iTSAyOTkuOTM2Nzk5IDEwNy4zNjA2NTMgTCAzMTUuNDUxNzc1IDEwNy4zNjA2NTMgQyAzMTYuODg4Mjc0IDEwNy4zNjA2NTMgMzE4LjA0MjE4MyAxMDguNTE0NTYzIDMxOC4wNDIxODMgMTA5Ljk0MzIxMiBMIDMxOC4wNDIxODMgMTIyLjc4NTM1OCBDIDMxOC4wNDIxODMgMTI0LjIxNzkzMiAzMTYuODg4Mjc0IDEyNS4zNzE4NDIgMzE1LjQ1MTc3NSAxMjUuMzcxODQyIEwgMjk5LjkzNjc5OSAxMjUuMzcxODQyIEMgMjk4LjUwNDIyNCAxMjUuMzcxODQyIDI5Ny4zNTAzMTUgMTI0LjIxNzkzMiAyOTcuMzUwMzE1IDEyMi43ODUzNTggTCAyOTcuMzUwMzE1IDEwOS45NDMyMTIgQyAyOTcuMzUwMzE1IDEwOC41MTQ1NjMgMjk4LjUwNDIyNCAxMDcuMzYwNjUzIDI5OS45MzY3OTkgMTA3LjM2MDY1MyBaIE0gMjk5LjkzNjc5OSAxMDcuMzYwNjUzICIgdHJhbnNmb3JtPSJtYXRyaXgoMC45OTUyNTgsIDAsIDAsIDAuOTk1MjU4LCAxLjA0NDA1OCwgMCkiLz48cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9InJnYig3MC4xOTUwMDclLCA3MC4xOTUwMDclLCA3MC4xOTUwMDclKSIgZmlsbC1vcGFjaXR5PSIxIiBzdHJva2Utd2lkdGg9IjAuMDkyMzcwMiIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZT0icmdiKDM5Ljk5OTM5JSwgMzkuOTk5MzklLCAzOS45OTkzOSUpIiBzdHJva2Utb3BhY2l0eT0iMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjQiIGQ9Ik0gMzAwLjU4MDQ3NiAxMTQuNTY2Njk5IEwgMzA0LjQ2MjE2NCAxMTQuNTY2Njk5IEMgMzA0LjcxNzI4IDExNC41NjY2OTkgMzA0LjkyNTI5NyAxMTQuNzcwNzkxIDMwNC45MjUyOTcgMTE1LjAyNTkwNyBDIDMwNC45MjUyOTcgMTE1LjI4MTAyMyAzMDQuNzE3MjggMTE1LjQ4OTA0MSAzMDQuNDYyMTY0IDExNS40ODkwNDEgTCAzMDAuNTgwNDc2IDExNS40ODkwNDEgQyAzMDAuMzI5Mjg1IDExNS40ODkwNDEgMzAwLjEyMTI2NyAxMTUuMjgxMDIzIDMwMC4xMjEyNjcgMTE1LjAyNTkwNyBDIDMwMC4xMjEyNjcgMTE0Ljc3MDc5MSAzMDAuMzI5Mjg1IDExNC41NjY2OTkgMzAwLjU4MDQ3NiAxMTQuNTY2Njk5IFogTSAzMDAuNTgwNDc2IDExNC41NjY2OTkgIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjk5NTI1OCwgMCwgMCwgMC45OTUyNTgsIDEuMDQ0MDU4LCAwKSIvPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0icmdiKDcwLjE5NTAwNyUsIDcwLjE5NTAwNyUsIDcwLjE5NTAwNyUpIiBmaWxsLW9wYWNpdHk9IjEiIHN0cm9rZS13aWR0aD0iMC4wOTIzNzAyIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlPSJyZ2IoMzkuOTk5MzklLCAzOS45OTkzOSUsIDM5Ljk5OTM5JSkiIHN0cm9rZS1vcGFjaXR5PSIxIiBzdHJva2UtbWl0ZXJsaW1pdD0iNCIgZD0iTSAzMTAuOTMwMzM1IDExNC41NjY2OTkgTCAzMTQuODA4MDk4IDExNC41NjY2OTkgQyAzMTUuMDYzMjE0IDExNC41NjY2OTkgMzE1LjI3MTIzMSAxMTQuNzcwNzkxIDMxNS4yNzEyMzEgMTE1LjAyNTkwNyBDIDMxNS4yNzEyMzEgMTE1LjI4MTAyMyAzMTUuMDYzMjE0IDExNS40ODkwNDEgMzE0LjgwODA5OCAxMTUuNDg5MDQxIEwgMzEwLjkzMDMzNSAxMTUuNDg5MDQxIEMgMzEwLjY3MTI5NCAxMTUuNDg5MDQxIDMxMC40NjcyMDEgMTE1LjI4MTAyMyAzMTAuNDY3MjAxIDExNS4wMjU5MDcgQyAzMTAuNDY3MjAxIDExNC43NzA3OTEgMzEwLjY3MTI5NCAxMTQuNTY2Njk5IDMxMC45MzAzMzUgMTE0LjU2NjY5OSBaIE0gMzEwLjkzMDMzNSAxMTQuNTY2Njk5ICIgdHJhbnNmb3JtPSJtYXRyaXgoMC45OTUyNTgsIDAsIDAsIDAuOTk1MjU4LCAxLjA0NDA1OCwgMCkiLz48cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9InJnYig3OS45OTg3NzklLCA3OS45OTg3NzklLCA3OS45OTg3NzklKSIgZmlsbC1vcGFjaXR5PSIxIiBzdHJva2Utd2lkdGg9IjAuNjQ2NTkxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlPSJyZ2IoNzAuMTk1MDA3JSwgNzAuMTk1MDA3JSwgNzAuMTk1MDA3JSkiIHN0cm9rZS1vcGFjaXR5PSIxIiBzdHJva2UtbWl0ZXJsaW1pdD0iNCIgZD0iTSAzMDIuMzM4ODE0IDEyMi44Nzk1NTUgQyAzMDUuOTEwNDM3IDEyMi42MzIyODggMzA5LjQ3ODEzNiAxMjIuNjMyMjg4IDMxMy4wNTM2ODUgMTIyLjg3OTU1NSAiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk1MjU4LCAwLCAwLCAwLjk5NTI1OCwgMS4wNDQwNTgsIDApIi8+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMjAuMzkxODQ2JSwgMzcuMjU0MzMzJSwgNTIuNTQ4MjE4JSkiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlLXdpZHRoPSIwLjA5MjM3MDIiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9InJnYigzMC45Nzk5MTklLCAyOS44MDM0NjclLCAyNy40NTA1NjIlKSIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1taXRlcmxpbWl0PSI0IiBkPSJNIDI5Ni43OTY5MSAxMjcuNDA0OTIgTCAzMTguNTk1NTg5IDEyNy40MDQ5MiBDIDMyMC4wMjgxNjMgMTI3LjQwNDkyIDMyMS4xODIwNzIgMTI4LjU1ODgyOSAzMjEuMTgyMDcyIDEyOS45OTE0MDMgTCAzMjEuMTgyMDcyIDE0Mi41NTQ4ODQgQyAzMjEuMTgyMDcyIDE0My45ODM1MzMgMzIwLjAyODE2MyAxNDUuMTQxMzY3IDMxOC41OTU1ODkgMTQ1LjE0MTM2NyBMIDI5Ni43OTY5MSAxNDUuMTQxMzY3IEMgMjk1LjM2NDMzNSAxNDUuMTQxMzY3IDI5NC4yMTA0MjYgMTQzLjk4MzUzMyAyOTQuMjEwNDI2IDE0Mi41NTQ4ODQgTCAyOTQuMjEwNDI2IDEyOS45OTE0MDMgQyAyOTQuMjEwNDI2IDEyOC41NTg4MjkgMjk1LjM2NDMzNSAxMjcuNDA0OTIgMjk2Ljc5NjkxIDEyNy40MDQ5MiBaIE0gMjk2Ljc5NjkxIDEyNy40MDQ5MiAiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk1MjU4LCAwLCAwLCAwLjk5NTI1OCwgMS4wNDQwNTgsIDApIi8+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoNzAuMTk1MDA3JSwgNzAuMTk1MDA3JSwgNzAuMTk1MDA3JSkiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlLXdpZHRoPSIwLjE4NDc0MSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZT0icmdiKDMwLjk3OTkxOSUsIDI5LjgwMzQ2NyUsIDI3LjQ1MDU2MiUpIiBzdHJva2Utb3BhY2l0eT0iMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjQiIGQ9Ik0gMzA5LjcyNTQwMyAxMzUuODA4MDQ3IEMgMzA5LjcyNTQwMyAxMzYuOTM0NDgzIDMwOC44MTQ4MzUgMTM3Ljg0NTA1IDMwNy42OTYyNDkgMTM3Ljg0NTA1IEMgMzA2LjU3MzczOSAxMzcuODQ1MDUgMzA1LjY2MzE3MSAxMzYuOTM0NDgzIDMwNS42NjMxNzEgMTM1LjgwODA0NyBDIDMwNS42NjMxNzEgMTM0LjY4OTQ2MiAzMDYuNTczNzM5IDEzMy43Nzg4OTQgMzA3LjY5NjI0OSAxMzMuNzc4ODk0IEMgMzA4LjgxNDgzNSAxMzMuNzc4ODk0IDMwOS43MjU0MDMgMTM0LjY4OTQ2MiAzMDkuNzI1NDAzIDEzNS44MDgwNDcgWiBNIDMwOS43MjU0MDMgMTM1LjgwODA0NyAiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk1MjU4LCAwLCAwLCAwLjk5NTI1OCwgMS4wNDQwNTgsIDApIi8+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMzkuOTk5MzklLCAzOS45OTkzOSUsIDM5Ljk5OTM5JSkiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlLXdpZHRoPSIwLjEzODU1NiIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZT0icmdiKDMwLjk3OTkxOSUsIDI5LjgwMzQ2NyUsIDI3LjQ1MDU2MiUpIiBzdHJva2Utb3BhY2l0eT0iMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjQiIGQ9Ik0gMzA4LjQzNDEyMyAxMzUuODA4MDQ3IEMgMzA4LjQzNDEyMyAxMzYuMjIwMTU4IDMwOC4xMDQ0MzUgMTM2LjU0OTg0NiAzMDcuNjk2MjQ5IDEzNi41NDk4NDYgQyAzMDcuMjg4MDY0IDEzNi41NDk4NDYgMzA2Ljk1ODM3NSAxMzYuMjIwMTU4IDMwNi45NTgzNzUgMTM1LjgwODA0NyBDIDMwNi45NTgzNzUgMTM1LjQwMzc4NyAzMDcuMjg4MDY0IDEzNS4wNzAxNzQgMzA3LjY5NjI0OSAxMzUuMDcwMTc0IEMgMzA4LjEwNDQzNSAxMzUuMDcwMTc0IDMwOC40MzQxMjMgMTM1LjQwMzc4NyAzMDguNDM0MTIzIDEzNS44MDgwNDcgWiBNIDMwOC40MzQxMjMgMTM1LjgwODA0NyAiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk1MjU4LCAwLCAwLCAwLjk5NTI1OCwgMS4wNDQwNTgsIDApIi8+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMjAuMzkxODQ2JSwgMzcuMjU0MzMzJSwgNTIuNTQ4MjE4JSkiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlLXdpZHRoPSIwLjA5MjM3MDIiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9InJnYigzMC45Nzk5MTklLCAyOS44MDM0NjclLCAyNy40NTA1NjIlKSIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1taXRlcmxpbWl0PSI0IiBkPSJNIDI4OS4yMjE5MjggMTI4LjYwNTkyNyBMIDI5MS40Mzk0NzQgMTI4LjYwNTkyNyBDIDI5Mi41NjU5MDkgMTI4LjYwNTkyNyAyOTMuNDcyNTUyIDEyOS41MTI1NyAyOTMuNDcyNTUyIDEzMC42MzUwOCBMIDI5My40NzI1NTIgMTM4LjU4MjkyNCBDIDI5My40NzI1NTIgMTM5LjcwNTQzNSAyOTIuNTY1OTA5IDE0MC42MTIwNzggMjkxLjQzOTQ3NCAxNDAuNjEyMDc4IEwgMjg5LjIyMTkyOCAxNDAuNjEyMDc4IEMgMjg4LjA5OTQxNyAxNDAuNjEyMDc4IDI4Ny4xOTI3NzQgMTM5LjcwNTQzNSAyODcuMTkyNzc0IDEzOC41ODI5MjQgTCAyODcuMTkyNzc0IDEzMC42MzUwOCBDIDI4Ny4xOTI3NzQgMTI5LjUxMjU3IDI4OC4wOTk0MTcgMTI4LjYwNTkyNyAyODkuMjIxOTI4IDEyOC42MDU5MjcgWiBNIDI4OS4yMjE5MjggMTI4LjYwNTkyNyAiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk1MjU4LCAwLCAwLCAwLjk5NTI1OCwgMS4wNDQwNTgsIDApIi8+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMjAuMzkxODQ2JSwgMzcuMjU0MzMzJSwgNTIuNTQ4MjE4JSkiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlLXdpZHRoPSIwLjA5MjM3MDIiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9InJnYigzMC45Nzk5MTklLCAyOS44MDM0NjclLCAyNy40NTA1NjIlKSIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1taXRlcmxpbWl0PSI0IiBkPSJNIDMyMy45NTMwMjQgMTI4LjYwNTkyNyBMIDMyNi4xNjY2NDYgMTI4LjYwNTkyNyBDIDMyNy4yOTcwMDYgMTI4LjYwNTkyNyAzMjguMjAzNjQ5IDEyOS41MTI1NyAzMjguMjAzNjQ5IDEzMC42MzUwOCBMIDMyOC4yMDM2NDkgMTM4LjU4MjkyNCBDIDMyOC4yMDM2NDkgMTM5LjcwNTQzNSAzMjcuMjk3MDA2IDE0MC42MTIwNzggMzI2LjE2NjY0NiAxNDAuNjEyMDc4IEwgMzIzLjk1MzAyNCAxNDAuNjEyMDc4IEMgMzIyLjgyNjU4OSAxNDAuNjEyMDc4IDMyMS45MjM4NzEgMTM5LjcwNTQzNSAzMjEuOTIzODcxIDEzOC41ODI5MjQgTCAzMjEuOTIzODcxIDEzMC42MzUwOCBDIDMyMS45MjM4NzEgMTI5LjUxMjU3IDMyMi44MjY1ODkgMTI4LjYwNTkyNyAzMjMuOTUzMDI0IDEyOC42MDU5MjcgWiBNIDMyMy45NTMwMjQgMTI4LjYwNTkyNyAiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk1MjU4LCAwLCAwLCAwLjk5NTI1OCwgMS4wNDQwNTgsIDApIi8+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMjAuMzkxODQ2JSwgMzcuMjU0MzMzJSwgNTIuNTQ4MjE4JSkiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlLXdpZHRoPSIwLjA5MjM3MDIiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9InJnYigzMC45Nzk5MTklLCAyOS44MDM0NjclLCAyNy40NTA1NjIlKSIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1taXRlcmxpbWl0PSI0IiBkPSJNIDI4OC4xMTExOTIgMTQwLjE1Mjg2OSBMIDI5Mi41NDYyODUgMTQwLjE1Mjg2OSBDIDI5My4zNjY1ODEgMTQwLjE1Mjg2OSAyOTQuMDIyMDMzIDE0MC44MTIyNDYgMjk0LjAyMjAzMyAxNDEuNjI4NjE3IEwgMjk0LjAyMjAzMyAxNDMuNDc3MjI2IEMgMjk0LjAyMjAzMyAxNDQuMjk3NTIyIDI5My4zNjY1ODEgMTQ0Ljk1Mjk3NCAyOTIuNTQ2Mjg1IDE0NC45NTI5NzQgTCAyODguMTExMTkyIDE0NC45NTI5NzQgQyAyODcuMjk0ODIxIDE0NC45NTI5NzQgMjg2LjYzNTQ0NCAxNDQuMjk3NTIyIDI4Ni42MzU0NDQgMTQzLjQ3NzIyNiBMIDI4Ni42MzU0NDQgMTQxLjYyODYxNyBDIDI4Ni42MzU0NDQgMTQwLjgxMjI0NiAyODcuMjk0ODIxIDE0MC4xNTI4NjkgMjg4LjExMTE5MiAxNDAuMTUyODY5IFogTSAyODguMTExMTkyIDE0MC4xNTI4NjkgIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjk5NTI1OCwgMCwgMCwgMC45OTUyNTgsIDEuMDQ0MDU4LCAwKSIvPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0icmdiKDIwLjM5MTg0NiUsIDM3LjI1NDMzMyUsIDUyLjU0ODIxOCUpIiBmaWxsLW9wYWNpdHk9IjEiIHN0cm9rZS13aWR0aD0iMC4wOTIzNzAyIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlPSJyZ2IoMzAuOTc5OTE5JSwgMjkuODAzNDY3JSwgMjcuNDUwNTYyJSkiIHN0cm9rZS1vcGFjaXR5PSIxIiBzdHJva2UtbWl0ZXJsaW1pdD0iNCIgZD0iTSAzMjIuODQyMjg5IDE0MC4xNTI4NjkgTCAzMjcuMjc3MzgyIDE0MC4xNTI4NjkgQyAzMjguMDk3Njc4IDE0MC4xNTI4NjkgMzI4Ljc1NzA1NSAxNDAuODEyMjQ2IDMyOC43NTcwNTUgMTQxLjYyODYxNyBMIDMyOC43NTcwNTUgMTQzLjQ3NzIyNiBDIDMyOC43NTcwNTUgMTQ0LjI5NzUyMiAzMjguMDk3Njc4IDE0NC45NTI5NzQgMzI3LjI3NzM4MiAxNDQuOTUyOTc0IEwgMzIyLjg0MjI4OSAxNDQuOTUyOTc0IEMgMzIyLjAyNTkxOCAxNDQuOTUyOTc0IDMyMS4zNjY1NDEgMTQ0LjI5NzUyMiAzMjEuMzY2NTQxIDE0My40NzcyMjYgTCAzMjEuMzY2NTQxIDE0MS42Mjg2MTcgQyAzMjEuMzY2NTQxIDE0MC44MTIyNDYgMzIyLjAyNTkxOCAxNDAuMTUyODY5IDMyMi44NDIyODkgMTQwLjE1Mjg2OSBaIE0gMzIyLjg0MjI4OSAxNDAuMTUyODY5ICIgdHJhbnNmb3JtPSJtYXRyaXgoMC45OTUyNTgsIDAsIDAsIDAuOTk1MjU4LCAxLjA0NDA1OCwgMCkiLz48cGF0aCBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjAuNTY2OTI5IiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlPSJyZ2IoMzAuOTc5OTE5JSwgMjkuODAzNDY3JSwgMjcuNDUwNTYyJSkiIHN0cm9rZS1vcGFjaXR5PSIxIiBzdHJva2UtbWl0ZXJsaW1pdD0iNCIgZD0iTSAzMDcuNjA5OTAyIDEwNy4zNzYzNTMgQyAzMDcuNjA1OTc3IDEwNi42Njk4NzggMzA3LjYwMjA1MyAxMDUuOTU1NTUzIDMwNy45MTIxMTcgMTA1LjQ2NDk0NiBDIDMwOC4yMzAwMyAxMDQuOTc0MzM4IDMwOC44NjU4NTggMTA0LjY5MTc0OCAzMDkuNTA1NjEgMTA0LjQxMzA4MyAiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk1MjU4LCAwLCAwLCAwLjk5NTI1OCwgMS4wNDQwNTgsIDApIi8+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMTAwJSwgMTAwJSwgMTAwJSkiIGZpbGwtb3BhY2l0eT0iMSIgZD0iTSAyOTkuMTQ0NTMxIDExMS40NTMxMjUgTCAzMDQuNjYwMTU2IDExMS40NTMxMjUgTCAzMDQuNjYwMTU2IDExNi45MDYyNSBMIDI5OS4xNDQ1MzEgMTE2LjkwNjI1IFogTSAyOTkuMTQ0NTMxIDExMS40NTMxMjUgIi8+PGcgY2xpcC1wYXRoPSJ1cmwoI2JwZTApIj48ZyA+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMTEuNzY0NTI2JSwgMTYuMDc4MTg2JSwgMjMuMTM2OTAyJSkiIGZpbGwtb3BhY2l0eT0iMSIgZD0iTSAzMDMuNDg0Mzc1IDExNC4yNTM5MDYgQyAzMDMuNDg0Mzc1IDExNS4xNDA2MjUgMzAyLjc2MTcxOSAxMTUuODY3MTg4IDMwMS44NzEwOTQgMTE1Ljg2NzE4OCBDIDMwMC45ODA0NjkgMTE1Ljg2NzE4OCAzMDAuMjUzOTA2IDExNS4xNDA2MjUgMzAwLjI1MzkwNiAxMTQuMjUzOTA2IEMgMzAwLjI1MzkwNiAxMTMuMzU5Mzc1IDMwMC45ODA0NjkgMTEyLjYzNjcxOSAzMDEuODcxMDk0IDExMi42MzY3MTkgQyAzMDIuNzYxNzE5IDExMi42MzY3MTkgMzAzLjQ4NDM3NSAxMTMuMzU5Mzc1IDMwMy40ODQzNzUgMTE0LjI1MzkwNiBaIE0gMzAzLjQ4NDM3NSAxMTQuMjUzOTA2ICIvPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0icmdiKDk3LjI1MzQxOCUsIDk4LjAzNzcyJSwgOTguODIyMDIxJSkiIGZpbGwtb3BhY2l0eT0iMSIgZD0iTSAzMDMuMjg5MDYyIDExMy40NDUzMTIgQyAzMDMuMjg5MDYyIDExMy43NzczNDQgMzAzLjAxNTYyNSAxMTQuMDUwNzgxIDMwMi42Nzk2ODggMTE0LjA1MDc4MSBDIDMwMi4zNDc2NTYgMTE0LjA1MDc4MSAzMDIuMDc0MjE5IDExMy43NzczNDQgMzAyLjA3NDIxOSAxMTMuNDQ1MzEyIEMgMzAyLjA3NDIxOSAxMTMuMTA5Mzc1IDMwMi4zNDc2NTYgMTEyLjgzNTkzOCAzMDIuNjc5Njg4IDExMi44MzU5MzggQyAzMDMuMDE1NjI1IDExMi44MzU5MzggMzAzLjI4OTA2MiAxMTMuMTA5Mzc1IDMwMy4yODkwNjIgMTEzLjQ0NTMxMiBaIE0gMzAzLjI4OTA2MiAxMTMuNDQ1MzEyICIvPjwvZz48L2c+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMjAuMzkxODQ2JSwgMzcuMjU0MzMzJSwgNTIuNTQ4MjE4JSkiIGZpbGwtb3BhY2l0eT0iMSIgZD0iTSAyOTguMTM2NzE5IDExMS4yNjU2MjUgTCAzMDYuMzUxNTYyIDExMS4yNjU2MjUgTCAzMDYuMzUxNTYyIDExNC4xMDU0NjkgTCAyOTguMTM2NzE5IDExNC4xMDU0NjkgWiBNIDI5OC4xMzY3MTkgMTExLjI2NTYyNSAiLz48cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9InJnYigxMDAlLCAxMDAlLCAxMDAlKSIgZmlsbC1vcGFjaXR5PSIxIiBkPSJNIDMwOS42NDg0MzggMTExLjQyMTg3NSBMIDMxNS4xNjQwNjIgMTExLjQyMTg3NSBMIDMxNS4xNjQwNjIgMTE2Ljg3NSBMIDMwOS42NDg0MzggMTE2Ljg3NSBaIE0gMzA5LjY0ODQzOCAxMTEuNDIxODc1ICIvPjxnIGNsaXAtcGF0aD0idXJsKCNicGUxKSI+PGcgPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0icmdiKDExLjc2NDUyNiUsIDE2LjA3ODE4NiUsIDIzLjEzNjkwMiUpIiBmaWxsLW9wYWNpdHk9IjEiIGQ9Ik0gMzEzLjk5MjE4OCAxMTQuMjE4NzUgQyAzMTMuOTkyMTg4IDExNS4xMDkzNzUgMzEzLjI2NTYyNSAxMTUuODMyMDMxIDMxMi4zNzUgMTE1LjgzMjAzMSBDIDMxMS40ODQzNzUgMTE1LjgzMjAzMSAzMTAuNzU3ODEyIDExNS4xMDkzNzUgMzEwLjc1NzgxMiAxMTQuMjE4NzUgQyAzMTAuNzU3ODEyIDExMy4zMjQyMTkgMzExLjQ4NDM3NSAxMTIuNjAxNTYyIDMxMi4zNzUgMTEyLjYwMTU2MiBDIDMxMy4yNjU2MjUgMTEyLjYwMTU2MiAzMTMuOTkyMTg4IDExMy4zMjQyMTkgMzEzLjk5MjE4OCAxMTQuMjE4NzUgWiBNIDMxMy45OTIxODggMTE0LjIxODc1ICIvPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0icmdiKDk3LjI1MzQxOCUsIDk4LjAzNzcyJSwgOTguODIyMDIxJSkiIGZpbGwtb3BhY2l0eT0iMSIgZD0iTSAzMTMuNzg5MDYyIDExMy40MTAxNTYgQyAzMTMuNzg5MDYyIDExMy43NDIxODggMzEzLjUxNTYyNSAxMTQuMDE1NjI1IDMxMy4xODM1OTQgMTE0LjAxNTYyNSBDIDMxMi44NDc2NTYgMTE0LjAxNTYyNSAzMTIuNTc4MTI1IDExMy43NDIxODggMzEyLjU3ODEyNSAxMTMuNDEwMTU2IEMgMzEyLjU3ODEyNSAxMTMuMDc0MjE5IDMxMi44NDc2NTYgMTEyLjgwMDc4MSAzMTMuMTgzNTk0IDExMi44MDA3ODEgQyAzMTMuNTE1NjI1IDExMi44MDA3ODEgMzEzLjc4OTA2MiAxMTMuMDc0MjE5IDMxMy43ODkwNjIgMTEzLjQxMDE1NiBaIE0gMzEzLjc4OTA2MiAxMTMuNDEwMTU2ICIvPjwvZz48L2c+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJyZ2IoMjAuMzkxODQ2JSwgMzcuMjU0MzMzJSwgNTIuNTQ4MjE4JSkiIGZpbGwtb3BhY2l0eT0iMSIgZD0iTSAzMDguNjQwNjI1IDExMS4yMzA0NjkgTCAzMTYuODU1NDY5IDExMS4yMzA0NjkgTCAzMTYuODU1NDY5IDExNC4wNzAzMTIgTCAzMDguNjQwNjI1IDExNC4wNzAzMTIgWiBNIDMwOC42NDA2MjUgMTExLjIzMDQ2OSAiLz48L3N2Zz4=">
 <link rel="apple-touch-icon" href="data:image/png;base64,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">
 <meta name="theme-color" content="#c8700e">
 <meta name="description" content="Reward valuation in large language models: causal induction of anhedonia.">
-<meta property="og:title" content="Reward Valuation in Large Language Models">
+<meta property="og:title" content="Reward Valuation in Large Language Models: Causal Induction of Anhedonia">
 <meta property="og:description" content="Causal induction of anhedonia through targeted perturbation of NAc-selective units.">
 <meta name="robots" content="noindex">
 
@@ -83,10 +83,11 @@ p{margin:0 0 15px}
 .hero .wrap{position:relative;z-index:1}
 .hero h1{font-family:var(--serif);font-weight:600;
   font-size:clamp(33px,5.4vw,56px);line-height:1.05;letter-spacing:-.022em;
-  margin:0 auto 16px;max-width:18ch;text-wrap:balance}
+  margin:0 auto 28px;max-width:30ch;text-wrap:balance}
+.h1-sub{display:block;margin-top:.12em}
 .tagline{font-family:var(--serif);font-size:clamp(18px,2.3vw,24px);font-weight:400;
   color:var(--ink-2);margin:0 0 30px}
-.authors{font-size:16.5px;font-weight:500;margin:0 0 8px;color:var(--ink);line-height:1.9;text-wrap:balance}
+.authors{font-family:var(--serif);font-size:clamp(16px,1.8vw,19px);font-weight:400;margin:0 0 26px;color:var(--ink);line-height:1.6;text-wrap:balance}
 .authors a{color:var(--ink);border-bottom:1px solid transparent;transition:border-color .15s ease}
 .authors a:hover{text-decoration:none;border-bottom-color:var(--line-2)}
 .authors sup,.affil sup{font-size:11px;color:var(--orange);font-weight:700}
@@ -250,8 +251,8 @@ h2 .n{flex:none;width:9px;height:9px;border-radius:50%;position:relative;top:-4p
 .na-beam i{position:absolute;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;opacity:0}
 .na-beam.l i{background:var(--hum);box-shadow:0 0 12px 3px var(--hum)}
 .na-beam.r i{background:var(--mod);box-shadow:0 0 12px 3px var(--mod)}
-.na-beam.l.go i{animation:naL .5s ease-in forwards}
-.na-beam.r.go i{animation:naR .5s ease-in forwards}
+.na-beam.l.go i{animation:naL .7s ease-in forwards}
+.na-beam.r.go i{animation:naR .7s ease-in forwards}
 @keyframes naL{0%{left:100%;opacity:1}100%{left:0;opacity:0}}
 @keyframes naR{0%{left:0;opacity:1}100%{left:100%;opacity:0}}
 .na-card{flex:0 1 230px;min-height:0;align-items:center;text-align:center;padding:17px 18px 15px;border-radius:14px;display:flex;flex-direction:column;gap:10px;
@@ -514,28 +515,33 @@ pre.prompt.open{max-height:none}
 .presult .outs{margin-top:16px}
 
 /* panel (b) localization */
-.loc{padding:14px 12px 12px !important;overflow:hidden}
+.loc{padding:14px 12px 14px !important;overflow:hidden;display:flex;flex-direction:column;gap:6px}
+.mcard .mstage{flex:1}
+.loc-dist{display:flex;flex-direction:column;gap:4px}
+.loc-sel{font:600 15px var(--sans);fill:var(--orange)}
+.loc-thrl{font-weight:700;fill:var(--orange)}
 .loc-prompts{display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:stretch}
 .loc-p{border-radius:8px;padding:10px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;
   background:var(--surface);border:1.5px solid var(--line-2)}
-.loc-ic{display:block;width:64px;height:51px;margin-bottom:6px;flex:none}
+.loc-ic{display:block;width:76px;height:60px;margin-bottom:6px;flex:none}
 .loc-tag{font:600 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;
   color:var(--ink-3);padding:3px 8px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);margin-bottom:5px}
-.loc-ptxt{font-size:11.5px;line-height:1.45;color:var(--ink-2)}
+.loc-ptxt{font-size:12.5px;line-height:1.45;color:var(--ink-2)}
 .loc-ptxt b{color:var(--ink);font-weight:600}
 .loc-op{font:600 22px var(--serif);color:var(--ink-3);align-self:center}
-.loc-arrow{display:flex;align-items:center;gap:6px;justify-content:center;margin:4px 0 2px}
-.loc-arrow svg{width:18px;height:auto;flex:none}
-.loc-eq{font:500 11px var(--mono);letter-spacing:.04em;color:var(--ink-3)}
+.loc-arrow{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;margin:4px 0 2px;min-height:64px}
+.loc-line{flex:1;width:0;min-height:10px;border-left:2px dashed var(--line-2)}
+.loc-head{width:12px;height:8px;margin-top:-6px;flex:none}
+.loc-eq{font:500 12px var(--mono);letter-spacing:.04em;color:var(--ink-3)}
 .loc-svg{display:block;width:100%;height:auto}
-.loc-axis{font:500 10px var(--mono);fill:var(--ink-3)}
+.loc-axis{font:500 16px var(--mono);fill:var(--ink-3)}
 .loc-thr{display:flex;align-items:center;gap:8px;margin:6px 0 2px}
 .loc-track{flex:1;position:relative}
 .loc-track input{width:100%;accent-color:var(--orange);margin:0;height:18px;cursor:pointer}
 .loc-mark{position:absolute;top:50%;width:3px;height:14px;background:var(--orange);border-radius:2px;
   transform:translate(-50%,-50%);pointer-events:none;opacity:.55}
 .loc-tlbl{font:500 10px var(--mono);color:var(--ink-3);white-space:nowrap}
-.loc-count{text-align:center;font:500 11.5px var(--mono);color:var(--orange);min-height:18px}
+.loc-count{text-align:center;font:500 12.5px var(--mono);color:var(--orange);min-height:18px}
 @media (max-width:520px){.loc-prompts{grid-template-columns:1fr;gap:4px}.loc-op{display:none}}
 
 /* panel (c) behavioural effect */
@@ -613,22 +619,19 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
 
 <div class="hero">
   <div class="wrap">
-    <h1>Reward Valuation in Large Language Models</h1>
-    <p class="tagline">Causal Induction of Anhedonia</p>
+    <h1>Reward Valuation in Large Language Models: <span class="h1-sub">Causal Induction of Anhedonia</span></h1>
 
-    <!-- Authors and affiliations go here, e.g.
-    <p class="authors">First Author<sup>1</sup>, Second Author<sup>2</sup></p>
-    <p class="affil"><sup>1</sup>Institution&ensp;<sup>2</sup>Institution</p> -->
+    <p class="authors">Melika Honarmand, Samin Mahdipour Aghabagher, Martin Schrimpf</p>
     <p class="links">
-      <a class="btn" href="#"><!-- arXiv link -->
+      <a class="btn" href="https://arxiv.org/abs/2607.06626" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8"/></svg>
         arXiv</a>
       <a class="btn" href="https://anonymous.4open.science/r/Anhedonic-AI-1FF0/README.md">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
         Code</a>
       <a class="btn" href="#demo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg>
-        Demo</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+        Examples</a>
     </p>
   </div>
 </div>
@@ -639,38 +642,6 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
   <div class="wrap">
     <p class="cbig">An AI model can be made <em>anhedonic</em>.</p>
     <p class="csub">Perturbing units that mirror the nucleus accumbens (NAc) — the brain’s hub for anticipating reward — shifts the model toward low-effort, low-reward choices, reproducing anhedonia: the diminished interest in pleasure that characterises depression. The deficit is specific to self-centered reward valuation, not a loss of capability, reward calculation, or a general avoidance of effort.</p>
-
-    <figure>
-      <div class="f1wrap"><div class="f1" id="f1charts"></div><div class="f1tip" id="f1tip" hidden></div></div>
-      
-    </figure>
-  </div>
-</section>
-
-<section id="results">
-  <div class="wrap">
-    <h2><span class="n"></span>Method</h2>
-
-    <ol class="steps">
-      <li><em class="step">Step 1</em><b>Functional localization</b><svg class="viz" viewBox="0 0 280 64" aria-hidden="true"><circle cx="12" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="32" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="51" cy="13" r="8" fill="var(--orange)" fill-opacity=".16"/><circle cx="51" cy="13" r="3.6" fill="var(--orange)"/><circle cx="70" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="90" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="110" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="129" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="148" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="168" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="188" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="207" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="226" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="246" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="266" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="12" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="32" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="51" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="70" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="90" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="110" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="129" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="148" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="168" cy="26" r="8" fill="var(--orange)" fill-opacity=".16"/><circle cx="168" cy="26" r="3.6" fill="var(--orange)"/><circle cx="188" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="207" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="226" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="246" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="266" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="12" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="32" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="51" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="70" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="90" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="110" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="129" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="148" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="168" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="188" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="207" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="226" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="246" cy="39" r="8" fill="var(--orange)" fill-opacity=".16"/><circle cx="246" cy="39" r="3.6" fill="var(--orange)"/><circle cx="266" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="12" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="32" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="51" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="70" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="90" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="110" cy="52" r="8" fill="var(--orange)" fill-opacity=".16"/><circle cx="110" cy="52" r="3.6" fill="var(--orange)"/><circle cx="129" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="148" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="168" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="188" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="207" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="226" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="246" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="266" cy="52" r="2.4" fill="var(--line-2)"/></svg>
-      Adapted from the Monetary Incentive Delay paradigm: matched neutral, monetary and reward
-      prompts in two diverse subject domains expose the units whose activity swings most sharply
-      under both incentive conditions, monetary and reward alike (NAc-selective units).</li>
-
-      <li><em class="step">Step 2</em><b>Activation patching</b><svg class="viz" viewBox="0 0 280 64" aria-hidden="true"><polyline points="8,34 17,22 26,21 35,28 44,36 53,38 62,36 71,34 80,34 89,33 98,32 107,34 116,40 125,46 134,43" fill="none" stroke="var(--orange)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><line x1="142" y1="6" x2="142" y2="58" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/><line x1="146" y1="34" x2="272" y2="34" stroke="var(--blue)" stroke-width="2.2" stroke-dasharray="7 5" stroke-linecap="round"/><circle cx="146" cy="34" r="4" fill="var(--blue)"/></svg>
-      Activations of the NAc-selective units are substituted with their mean activation vector
-      across neutral-condition prompts. No weights are modified.</li>
-
-      <li><em class="step">Step 3</em><b>Behavioral and psychometric evaluation</b><svg class="viz" viewBox="0 0 280 64" aria-hidden="true"><rect x="2" y="14" width="62" height="36" rx="8" fill="var(--blue)" fill-opacity=".10" stroke="var(--blue)" stroke-width="2"/><text x="33" y="37" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="500" fill="var(--blue)">10</text><rect x="72" y="14" width="62" height="36" rx="8" fill="none" stroke="var(--line-2)" stroke-width="2"/><text x="103" y="37" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="500" fill="var(--line-2)">20</text><rect x="142" y="14" width="62" height="36" rx="8" fill="none" stroke="var(--line-2)" stroke-width="2"/><text x="173" y="37" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="500" fill="var(--line-2)">30</text><rect x="212" y="14" width="62" height="36" rx="8" fill="var(--orange)" fill-opacity=".10" stroke="var(--orange)" stroke-width="2"/><text x="243" y="37" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="500" fill="var(--orange)">40</text></svg>
-      Both models are evaluated on the same battery: standard anhedonia questionnaires (DARS,
-      MAP-SR, AES), and a choice between a low-effort task with a small reward and a high-effort
-      task with a large one (Probability-EEfRT, ASDiv-EEfRT, MMLU-EEfRT).
-      Additional controls confirm that reasoning remains intact.</li>
-    </ol>
-
-    <p class="modelnote">Primary model: <b>Qwen2-VL-7B-Instruct</b>, a transformer-based,
-    decoder-only vision-language model. The same framework was applied to additional models, which
-    showed consistent anhedonic behavior following perturbation.</p>
 
     <figure id="fig1">
       <svg id="figsrc" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
@@ -5079,33 +5050,38 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
               </div>
             </div>
 
-            <div class="loc-arrow">
-              <svg viewBox="0 0 40 36" aria-hidden="true"><path d="M20 4 L20 28" stroke="var(--ink-3)" stroke-width="2" stroke-dasharray="3 4"/><path d="M14 22 L20 30 L26 22" fill="none" stroke="var(--ink-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="loc-eq">=&ensp;Δ activation per unit</span>
+            <div class="loc-arrow" aria-hidden="true">
+              <span class="loc-line"></span>
+              <span class="loc-eq">Δ activation per unit</span>
+              <span class="loc-line"></span>
+              <svg class="loc-head" viewBox="0 0 12 8"><path d="M1 1 L6 7 L11 1" fill="none" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
 
             <div class="loc-dist">
-              <svg id="distSvg" viewBox="0 0 480 180" class="loc-svg" aria-label="Distribution of activation change with threshold">
+              <svg id="distSvg" viewBox="0 0 480 300" class="loc-svg" aria-label="Distribution of activation change across units, with the 3 sigma threshold">
                 <defs>
-                  <clipPath id="cTailL"><rect id="cTlR" x="0" y="0" width="120" height="180"/></clipPath>
-                  <clipPath id="cTailR"><rect id="cTrR" x="360" y="0" width="120" height="180"/></clipPath>
+                  <clipPath id="cTailL"><rect x="0" y="0" width="75" height="300"/></clipPath>
+                  <clipPath id="cTailR"><rect x="405" y="0" width="75" height="300"/></clipPath>
                 </defs>
-                <path d="M30,144 L30.0,140.1 L32.1,139.8 L34.2,139.5 L36.3,139.2 L38.4,138.9 L40.6,138.5 L42.7,138.2 L44.8,137.8 L46.9,137.4 L49.0,136.9 L51.1,136.5 L53.2,136.0 L55.3,135.5 L57.4,135.0 L59.5,134.4 L61.7,133.8 L63.8,133.2 L65.9,132.6 L68.0,131.9 L70.1,131.2 L72.2,130.5 L74.3,129.8 L76.4,129.0 L78.5,128.1 L80.7,127.3 L82.8,126.4 L84.9,125.5 L87.0,124.5 L89.1,123.5 L91.2,122.5 L93.3,121.4 L95.4,120.3 L97.5,119.2 L99.6,118.0 L101.8,116.8 L103.9,115.5 L106.0,114.2 L108.1,112.9 L110.2,111.6 L112.3,110.2 L114.4,108.7 L116.5,107.3 L118.6,105.7 L120.8,104.2 L122.9,102.6 L125.0,101.0 L127.1,99.4 L129.2,97.7 L131.3,96.0 L133.4,94.3 L135.5,92.6 L137.6,90.8 L139.7,89.0 L141.9,87.2 L144.0,85.3 L146.1,83.5 L148.2,81.6 L150.3,79.7 L152.4,77.8 L154.5,75.9 L156.6,74.0 L158.7,72.1 L160.9,70.2 L163.0,68.3 L165.1,66.4 L167.2,64.5 L169.3,62.6 L171.4,60.7 L173.5,58.9 L175.6,57.0 L177.7,55.2 L179.8,53.4 L182.0,51.6 L184.1,49.9 L186.2,48.2 L188.3,46.5 L190.4,44.9 L192.5,43.3 L194.6,41.7 L196.7,40.2 L198.8,38.8 L201.0,37.4 L203.1,36.1 L205.2,34.8 L207.3,33.6 L209.4,32.4 L211.5,31.3 L213.6,30.3 L215.7,29.4 L217.8,28.5 L219.9,27.7 L222.1,27.0 L224.2,26.3 L226.3,25.7 L228.4,25.2 L230.5,24.8 L232.6,24.5 L234.7,24.3 L236.8,24.1 L238.9,24.0 L241.1,24.0 L243.2,24.1 L245.3,24.3 L247.4,24.5 L249.5,24.8 L251.6,25.2 L253.7,25.7 L255.8,26.3 L257.9,27.0 L260.1,27.7 L262.2,28.5 L264.3,29.4 L266.4,30.3 L268.5,31.3 L270.6,32.4 L272.7,33.6 L274.8,34.8 L276.9,36.1 L279.0,37.4 L281.2,38.8 L283.3,40.2 L285.4,41.7 L287.5,43.3 L289.6,44.9 L291.7,46.5 L293.8,48.2 L295.9,49.9 L298.0,51.6 L300.2,53.4 L302.3,55.2 L304.4,57.0 L306.5,58.9 L308.6,60.7 L310.7,62.6 L312.8,64.5 L314.9,66.4 L317.0,68.3 L319.1,70.2 L321.3,72.1 L323.4,74.0 L325.5,75.9 L327.6,77.8 L329.7,79.7 L331.8,81.6 L333.9,83.5 L336.0,85.3 L338.1,87.2 L340.3,89.0 L342.4,90.8 L344.5,92.6 L346.6,94.3 L348.7,96.0 L350.8,97.7 L352.9,99.4 L355.0,101.0 L357.1,102.6 L359.2,104.2 L361.4,105.7 L363.5,107.3 L365.6,108.7 L367.7,110.2 L369.8,111.6 L371.9,112.9 L374.0,114.2 L376.1,115.5 L378.2,116.8 L380.4,118.0 L382.5,119.2 L384.6,120.3 L386.7,121.4 L388.8,122.5 L390.9,123.5 L393.0,124.5 L395.1,125.5 L397.2,126.4 L399.3,127.3 L401.5,128.1 L403.6,129.0 L405.7,129.8 L407.8,130.5 L409.9,131.2 L412.0,131.9 L414.1,132.6 L416.2,133.2 L418.3,133.8 L420.5,134.4 L422.6,135.0 L424.7,135.5 L426.8,136.0 L428.9,136.5 L431.0,136.9 L433.1,137.4 L435.2,137.8 L437.3,138.2 L439.4,138.5 L441.6,138.9 L443.7,139.2 L445.8,139.5 L447.9,139.8 L450.0,140.1 L450,144 Z" fill="var(--surface-2)" stroke="none"/>
-                <path d="M30,144 L30.0,140.1 L32.1,139.8 L34.2,139.5 L36.3,139.2 L38.4,138.9 L40.6,138.5 L42.7,138.2 L44.8,137.8 L46.9,137.4 L49.0,136.9 L51.1,136.5 L53.2,136.0 L55.3,135.5 L57.4,135.0 L59.5,134.4 L61.7,133.8 L63.8,133.2 L65.9,132.6 L68.0,131.9 L70.1,131.2 L72.2,130.5 L74.3,129.8 L76.4,129.0 L78.5,128.1 L80.7,127.3 L82.8,126.4 L84.9,125.5 L87.0,124.5 L89.1,123.5 L91.2,122.5 L93.3,121.4 L95.4,120.3 L97.5,119.2 L99.6,118.0 L101.8,116.8 L103.9,115.5 L106.0,114.2 L108.1,112.9 L110.2,111.6 L112.3,110.2 L114.4,108.7 L116.5,107.3 L118.6,105.7 L120.8,104.2 L122.9,102.6 L125.0,101.0 L127.1,99.4 L129.2,97.7 L131.3,96.0 L133.4,94.3 L135.5,92.6 L137.6,90.8 L139.7,89.0 L141.9,87.2 L144.0,85.3 L146.1,83.5 L148.2,81.6 L150.3,79.7 L152.4,77.8 L154.5,75.9 L156.6,74.0 L158.7,72.1 L160.9,70.2 L163.0,68.3 L165.1,66.4 L167.2,64.5 L169.3,62.6 L171.4,60.7 L173.5,58.9 L175.6,57.0 L177.7,55.2 L179.8,53.4 L182.0,51.6 L184.1,49.9 L186.2,48.2 L188.3,46.5 L190.4,44.9 L192.5,43.3 L194.6,41.7 L196.7,40.2 L198.8,38.8 L201.0,37.4 L203.1,36.1 L205.2,34.8 L207.3,33.6 L209.4,32.4 L211.5,31.3 L213.6,30.3 L215.7,29.4 L217.8,28.5 L219.9,27.7 L222.1,27.0 L224.2,26.3 L226.3,25.7 L228.4,25.2 L230.5,24.8 L232.6,24.5 L234.7,24.3 L236.8,24.1 L238.9,24.0 L241.1,24.0 L243.2,24.1 L245.3,24.3 L247.4,24.5 L249.5,24.8 L251.6,25.2 L253.7,25.7 L255.8,26.3 L257.9,27.0 L260.1,27.7 L262.2,28.5 L264.3,29.4 L266.4,30.3 L268.5,31.3 L270.6,32.4 L272.7,33.6 L274.8,34.8 L276.9,36.1 L279.0,37.4 L281.2,38.8 L283.3,40.2 L285.4,41.7 L287.5,43.3 L289.6,44.9 L291.7,46.5 L293.8,48.2 L295.9,49.9 L298.0,51.6 L300.2,53.4 L302.3,55.2 L304.4,57.0 L306.5,58.9 L308.6,60.7 L310.7,62.6 L312.8,64.5 L314.9,66.4 L317.0,68.3 L319.1,70.2 L321.3,72.1 L323.4,74.0 L325.5,75.9 L327.6,77.8 L329.7,79.7 L331.8,81.6 L333.9,83.5 L336.0,85.3 L338.1,87.2 L340.3,89.0 L342.4,90.8 L344.5,92.6 L346.6,94.3 L348.7,96.0 L350.8,97.7 L352.9,99.4 L355.0,101.0 L357.1,102.6 L359.2,104.2 L361.4,105.7 L363.5,107.3 L365.6,108.7 L367.7,110.2 L369.8,111.6 L371.9,112.9 L374.0,114.2 L376.1,115.5 L378.2,116.8 L380.4,118.0 L382.5,119.2 L384.6,120.3 L386.7,121.4 L388.8,122.5 L390.9,123.5 L393.0,124.5 L395.1,125.5 L397.2,126.4 L399.3,127.3 L401.5,128.1 L403.6,129.0 L405.7,129.8 L407.8,130.5 L409.9,131.2 L412.0,131.9 L414.1,132.6 L416.2,133.2 L418.3,133.8 L420.5,134.4 L422.6,135.0 L424.7,135.5 L426.8,136.0 L428.9,136.5 L431.0,136.9 L433.1,137.4 L435.2,137.8 L437.3,138.2 L439.4,138.5 L441.6,138.9 L443.7,139.2 L445.8,139.5 L447.9,139.8 L450.0,140.1 L450,144 Z" fill="var(--orange)" opacity=".22" clip-path="url(#cTailL)"/>
-                <path d="M30,144 L30.0,140.1 L32.1,139.8 L34.2,139.5 L36.3,139.2 L38.4,138.9 L40.6,138.5 L42.7,138.2 L44.8,137.8 L46.9,137.4 L49.0,136.9 L51.1,136.5 L53.2,136.0 L55.3,135.5 L57.4,135.0 L59.5,134.4 L61.7,133.8 L63.8,133.2 L65.9,132.6 L68.0,131.9 L70.1,131.2 L72.2,130.5 L74.3,129.8 L76.4,129.0 L78.5,128.1 L80.7,127.3 L82.8,126.4 L84.9,125.5 L87.0,124.5 L89.1,123.5 L91.2,122.5 L93.3,121.4 L95.4,120.3 L97.5,119.2 L99.6,118.0 L101.8,116.8 L103.9,115.5 L106.0,114.2 L108.1,112.9 L110.2,111.6 L112.3,110.2 L114.4,108.7 L116.5,107.3 L118.6,105.7 L120.8,104.2 L122.9,102.6 L125.0,101.0 L127.1,99.4 L129.2,97.7 L131.3,96.0 L133.4,94.3 L135.5,92.6 L137.6,90.8 L139.7,89.0 L141.9,87.2 L144.0,85.3 L146.1,83.5 L148.2,81.6 L150.3,79.7 L152.4,77.8 L154.5,75.9 L156.6,74.0 L158.7,72.1 L160.9,70.2 L163.0,68.3 L165.1,66.4 L167.2,64.5 L169.3,62.6 L171.4,60.7 L173.5,58.9 L175.6,57.0 L177.7,55.2 L179.8,53.4 L182.0,51.6 L184.1,49.9 L186.2,48.2 L188.3,46.5 L190.4,44.9 L192.5,43.3 L194.6,41.7 L196.7,40.2 L198.8,38.8 L201.0,37.4 L203.1,36.1 L205.2,34.8 L207.3,33.6 L209.4,32.4 L211.5,31.3 L213.6,30.3 L215.7,29.4 L217.8,28.5 L219.9,27.7 L222.1,27.0 L224.2,26.3 L226.3,25.7 L228.4,25.2 L230.5,24.8 L232.6,24.5 L234.7,24.3 L236.8,24.1 L238.9,24.0 L241.1,24.0 L243.2,24.1 L245.3,24.3 L247.4,24.5 L249.5,24.8 L251.6,25.2 L253.7,25.7 L255.8,26.3 L257.9,27.0 L260.1,27.7 L262.2,28.5 L264.3,29.4 L266.4,30.3 L268.5,31.3 L270.6,32.4 L272.7,33.6 L274.8,34.8 L276.9,36.1 L279.0,37.4 L281.2,38.8 L283.3,40.2 L285.4,41.7 L287.5,43.3 L289.6,44.9 L291.7,46.5 L293.8,48.2 L295.9,49.9 L298.0,51.6 L300.2,53.4 L302.3,55.2 L304.4,57.0 L306.5,58.9 L308.6,60.7 L310.7,62.6 L312.8,64.5 L314.9,66.4 L317.0,68.3 L319.1,70.2 L321.3,72.1 L323.4,74.0 L325.5,75.9 L327.6,77.8 L329.7,79.7 L331.8,81.6 L333.9,83.5 L336.0,85.3 L338.1,87.2 L340.3,89.0 L342.4,90.8 L344.5,92.6 L346.6,94.3 L348.7,96.0 L350.8,97.7 L352.9,99.4 L355.0,101.0 L357.1,102.6 L359.2,104.2 L361.4,105.7 L363.5,107.3 L365.6,108.7 L367.7,110.2 L369.8,111.6 L371.9,112.9 L374.0,114.2 L376.1,115.5 L378.2,116.8 L380.4,118.0 L382.5,119.2 L384.6,120.3 L386.7,121.4 L388.8,122.5 L390.9,123.5 L393.0,124.5 L395.1,125.5 L397.2,126.4 L399.3,127.3 L401.5,128.1 L403.6,129.0 L405.7,129.8 L407.8,130.5 L409.9,131.2 L412.0,131.9 L414.1,132.6 L416.2,133.2 L418.3,133.8 L420.5,134.4 L422.6,135.0 L424.7,135.5 L426.8,136.0 L428.9,136.5 L431.0,136.9 L433.1,137.4 L435.2,137.8 L437.3,138.2 L439.4,138.5 L441.6,138.9 L443.7,139.2 L445.8,139.5 L447.9,139.8 L450.0,140.1 L450,144 Z" fill="var(--orange)" opacity=".22" clip-path="url(#cTailR)"/>
-                <line id="thrL" y1="30" y2="144" stroke="var(--orange)" stroke-width="2" stroke-dasharray="5 4"/>
-                <line id="thrR" y1="30" y2="144" stroke="var(--orange)" stroke-width="2" stroke-dasharray="5 4"/>
-                <path d="M30.0,140.1 L32.1,139.8 L34.2,139.5 L36.3,139.2 L38.4,138.9 L40.6,138.5 L42.7,138.2 L44.8,137.8 L46.9,137.4 L49.0,136.9 L51.1,136.5 L53.2,136.0 L55.3,135.5 L57.4,135.0 L59.5,134.4 L61.7,133.8 L63.8,133.2 L65.9,132.6 L68.0,131.9 L70.1,131.2 L72.2,130.5 L74.3,129.8 L76.4,129.0 L78.5,128.1 L80.7,127.3 L82.8,126.4 L84.9,125.5 L87.0,124.5 L89.1,123.5 L91.2,122.5 L93.3,121.4 L95.4,120.3 L97.5,119.2 L99.6,118.0 L101.8,116.8 L103.9,115.5 L106.0,114.2 L108.1,112.9 L110.2,111.6 L112.3,110.2 L114.4,108.7 L116.5,107.3 L118.6,105.7 L120.8,104.2 L122.9,102.6 L125.0,101.0 L127.1,99.4 L129.2,97.7 L131.3,96.0 L133.4,94.3 L135.5,92.6 L137.6,90.8 L139.7,89.0 L141.9,87.2 L144.0,85.3 L146.1,83.5 L148.2,81.6 L150.3,79.7 L152.4,77.8 L154.5,75.9 L156.6,74.0 L158.7,72.1 L160.9,70.2 L163.0,68.3 L165.1,66.4 L167.2,64.5 L169.3,62.6 L171.4,60.7 L173.5,58.9 L175.6,57.0 L177.7,55.2 L179.8,53.4 L182.0,51.6 L184.1,49.9 L186.2,48.2 L188.3,46.5 L190.4,44.9 L192.5,43.3 L194.6,41.7 L196.7,40.2 L198.8,38.8 L201.0,37.4 L203.1,36.1 L205.2,34.8 L207.3,33.6 L209.4,32.4 L211.5,31.3 L213.6,30.3 L215.7,29.4 L217.8,28.5 L219.9,27.7 L222.1,27.0 L224.2,26.3 L226.3,25.7 L228.4,25.2 L230.5,24.8 L232.6,24.5 L234.7,24.3 L236.8,24.1 L238.9,24.0 L241.1,24.0 L243.2,24.1 L245.3,24.3 L247.4,24.5 L249.5,24.8 L251.6,25.2 L253.7,25.7 L255.8,26.3 L257.9,27.0 L260.1,27.7 L262.2,28.5 L264.3,29.4 L266.4,30.3 L268.5,31.3 L270.6,32.4 L272.7,33.6 L274.8,34.8 L276.9,36.1 L279.0,37.4 L281.2,38.8 L283.3,40.2 L285.4,41.7 L287.5,43.3 L289.6,44.9 L291.7,46.5 L293.8,48.2 L295.9,49.9 L298.0,51.6 L300.2,53.4 L302.3,55.2 L304.4,57.0 L306.5,58.9 L308.6,60.7 L310.7,62.6 L312.8,64.5 L314.9,66.4 L317.0,68.3 L319.1,70.2 L321.3,72.1 L323.4,74.0 L325.5,75.9 L327.6,77.8 L329.7,79.7 L331.8,81.6 L333.9,83.5 L336.0,85.3 L338.1,87.2 L340.3,89.0 L342.4,90.8 L344.5,92.6 L346.6,94.3 L348.7,96.0 L350.8,97.7 L352.9,99.4 L355.0,101.0 L357.1,102.6 L359.2,104.2 L361.4,105.7 L363.5,107.3 L365.6,108.7 L367.7,110.2 L369.8,111.6 L371.9,112.9 L374.0,114.2 L376.1,115.5 L378.2,116.8 L380.4,118.0 L382.5,119.2 L384.6,120.3 L386.7,121.4 L388.8,122.5 L390.9,123.5 L393.0,124.5 L395.1,125.5 L397.2,126.4 L399.3,127.3 L401.5,128.1 L403.6,129.0 L405.7,129.8 L407.8,130.5 L409.9,131.2 L412.0,131.9 L414.1,132.6 L416.2,133.2 L418.3,133.8 L420.5,134.4 L422.6,135.0 L424.7,135.5 L426.8,136.0 L428.9,136.5 L431.0,136.9 L433.1,137.4 L435.2,137.8 L437.3,138.2 L439.4,138.5 L441.6,138.9 L443.7,139.2 L445.8,139.5 L447.9,139.8 L450.0,140.1" fill="none" stroke="var(--ink-2)" stroke-width="2.2"/>
-                <text x="240" y="172" text-anchor="middle" class="loc-axis">Δ activation (incentivized − neutral)</text>
-                <text x="38" y="172" text-anchor="middle" class="loc-axis" style="fill:var(--orange)">−</text>
-                <text x="442" y="172" text-anchor="middle" class="loc-axis" style="fill:var(--orange)">+</text>
+                <text x="14" y="143" transform="rotate(-90 14 143)" text-anchor="middle" class="loc-axis">number of units</text>
+                <rect x="30" y="42" width="45" height="190" fill="var(--orange)" opacity=".13"/>
+                <rect x="405" y="42" width="45" height="190" fill="var(--orange)" opacity=".13"/>
+                <path d="M30.0,231.9 L32.1,231.9 L34.2,231.8 L36.3,231.8 L38.4,231.8 L40.5,231.8 L42.6,231.7 L44.7,231.7 L46.8,231.6 L48.9,231.6 L51.0,231.5 L53.1,231.4 L55.2,231.4 L57.3,231.3 L59.4,231.2 L61.5,231.1 L63.6,231.0 L65.7,230.8 L67.8,230.7 L69.9,230.5 L72.0,230.3 L74.1,230.1 L76.2,229.9 L78.3,229.6 L80.4,229.4 L82.5,229.1 L84.6,228.7 L86.7,228.3 L88.8,227.9 L90.9,227.5 L93.0,227.0 L95.1,226.5 L97.2,225.9 L99.3,225.2 L101.4,224.6 L103.5,223.8 L105.6,223.0 L107.7,222.1 L109.8,221.2 L111.9,220.2 L114.0,219.1 L116.1,217.9 L118.2,216.7 L120.3,215.3 L122.4,213.9 L124.5,212.4 L126.6,210.8 L128.7,209.0 L130.8,207.2 L132.9,205.3 L135.0,203.2 L137.1,201.1 L139.2,198.8 L141.3,196.4 L143.4,193.9 L145.5,191.3 L147.6,188.6 L149.7,185.8 L151.8,182.8 L153.9,179.7 L156.0,176.5 L158.1,173.3 L160.2,169.9 L162.3,166.4 L164.4,162.8 L166.5,159.1 L168.6,155.4 L170.7,151.5 L172.8,147.6 L174.9,143.7 L177.0,139.6 L179.1,135.6 L181.2,131.5 L183.3,127.4 L185.4,123.3 L187.5,119.1 L189.6,115.0 L191.7,111.0 L193.8,106.9 L195.9,102.9 L198.0,99.0 L200.1,95.2 L202.2,91.4 L204.3,87.8 L206.4,84.3 L208.5,80.9 L210.6,77.7 L212.7,74.6 L214.8,71.7 L216.9,69.0 L219.0,66.5 L221.1,64.2 L223.2,62.1 L225.3,60.2 L227.4,58.6 L229.5,57.2 L231.6,56.1 L233.7,55.2 L235.8,54.5 L237.9,54.1 L240.0,54.0 L242.1,54.1 L244.2,54.5 L246.3,55.2 L248.4,56.1 L250.5,57.2 L252.6,58.6 L254.7,60.2 L256.8,62.1 L258.9,64.2 L261.0,66.5 L263.1,69.0 L265.2,71.7 L267.3,74.6 L269.4,77.7 L271.5,80.9 L273.6,84.3 L275.7,87.8 L277.8,91.4 L279.9,95.2 L282.0,99.0 L284.1,102.9 L286.2,106.9 L288.3,111.0 L290.4,115.0 L292.5,119.1 L294.6,123.3 L296.7,127.4 L298.8,131.5 L300.9,135.6 L303.0,139.6 L305.1,143.7 L307.2,147.6 L309.3,151.5 L311.4,155.4 L313.5,159.1 L315.6,162.8 L317.7,166.4 L319.8,169.9 L321.9,173.3 L324.0,176.5 L326.1,179.7 L328.2,182.8 L330.3,185.8 L332.4,188.6 L334.5,191.3 L336.6,193.9 L338.7,196.4 L340.8,198.8 L342.9,201.1 L345.0,203.2 L347.1,205.3 L349.2,207.2 L351.3,209.0 L353.4,210.8 L355.5,212.4 L357.6,213.9 L359.7,215.3 L361.8,216.7 L363.9,217.9 L366.0,219.1 L368.1,220.2 L370.2,221.2 L372.3,222.1 L374.4,223.0 L376.5,223.8 L378.6,224.6 L380.7,225.2 L382.8,225.9 L384.9,226.5 L387.0,227.0 L389.1,227.5 L391.2,227.9 L393.3,228.3 L395.4,228.7 L397.5,229.1 L399.6,229.4 L401.7,229.6 L403.8,229.9 L405.9,230.1 L408.0,230.3 L410.1,230.5 L412.2,230.7 L414.3,230.8 L416.4,231.0 L418.5,231.1 L420.6,231.2 L422.7,231.3 L424.8,231.4 L426.9,231.4 L429.0,231.5 L431.1,231.6 L433.2,231.6 L435.3,231.7 L437.4,231.7 L439.5,231.8 L441.6,231.8 L443.7,231.8 L445.8,231.8 L447.9,231.9 L450.0,231.9" fill="var(--surface-2)" stroke="none"/>
+                <path d="M30.0,231.9 L32.1,231.9 L34.2,231.8 L36.3,231.8 L38.4,231.8 L40.5,231.8 L42.6,231.7 L44.7,231.7 L46.8,231.6 L48.9,231.6 L51.0,231.5 L53.1,231.4 L55.2,231.4 L57.3,231.3 L59.4,231.2 L61.5,231.1 L63.6,231.0 L65.7,230.8 L67.8,230.7 L69.9,230.5 L72.0,230.3 L74.1,230.1 L76.2,229.9 L78.3,229.6 L80.4,229.4 L82.5,229.1 L84.6,228.7 L86.7,228.3 L88.8,227.9 L90.9,227.5 L93.0,227.0 L95.1,226.5 L97.2,225.9 L99.3,225.2 L101.4,224.6 L103.5,223.8 L105.6,223.0 L107.7,222.1 L109.8,221.2 L111.9,220.2 L114.0,219.1 L116.1,217.9 L118.2,216.7 L120.3,215.3 L122.4,213.9 L124.5,212.4 L126.6,210.8 L128.7,209.0 L130.8,207.2 L132.9,205.3 L135.0,203.2 L137.1,201.1 L139.2,198.8 L141.3,196.4 L143.4,193.9 L145.5,191.3 L147.6,188.6 L149.7,185.8 L151.8,182.8 L153.9,179.7 L156.0,176.5 L158.1,173.3 L160.2,169.9 L162.3,166.4 L164.4,162.8 L166.5,159.1 L168.6,155.4 L170.7,151.5 L172.8,147.6 L174.9,143.7 L177.0,139.6 L179.1,135.6 L181.2,131.5 L183.3,127.4 L185.4,123.3 L187.5,119.1 L189.6,115.0 L191.7,111.0 L193.8,106.9 L195.9,102.9 L198.0,99.0 L200.1,95.2 L202.2,91.4 L204.3,87.8 L206.4,84.3 L208.5,80.9 L210.6,77.7 L212.7,74.6 L214.8,71.7 L216.9,69.0 L219.0,66.5 L221.1,64.2 L223.2,62.1 L225.3,60.2 L227.4,58.6 L229.5,57.2 L231.6,56.1 L233.7,55.2 L235.8,54.5 L237.9,54.1 L240.0,54.0 L242.1,54.1 L244.2,54.5 L246.3,55.2 L248.4,56.1 L250.5,57.2 L252.6,58.6 L254.7,60.2 L256.8,62.1 L258.9,64.2 L261.0,66.5 L263.1,69.0 L265.2,71.7 L267.3,74.6 L269.4,77.7 L271.5,80.9 L273.6,84.3 L275.7,87.8 L277.8,91.4 L279.9,95.2 L282.0,99.0 L284.1,102.9 L286.2,106.9 L288.3,111.0 L290.4,115.0 L292.5,119.1 L294.6,123.3 L296.7,127.4 L298.8,131.5 L300.9,135.6 L303.0,139.6 L305.1,143.7 L307.2,147.6 L309.3,151.5 L311.4,155.4 L313.5,159.1 L315.6,162.8 L317.7,166.4 L319.8,169.9 L321.9,173.3 L324.0,176.5 L326.1,179.7 L328.2,182.8 L330.3,185.8 L332.4,188.6 L334.5,191.3 L336.6,193.9 L338.7,196.4 L340.8,198.8 L342.9,201.1 L345.0,203.2 L347.1,205.3 L349.2,207.2 L351.3,209.0 L353.4,210.8 L355.5,212.4 L357.6,213.9 L359.7,215.3 L361.8,216.7 L363.9,217.9 L366.0,219.1 L368.1,220.2 L370.2,221.2 L372.3,222.1 L374.4,223.0 L376.5,223.8 L378.6,224.6 L380.7,225.2 L382.8,225.9 L384.9,226.5 L387.0,227.0 L389.1,227.5 L391.2,227.9 L393.3,228.3 L395.4,228.7 L397.5,229.1 L399.6,229.4 L401.7,229.6 L403.8,229.9 L405.9,230.1 L408.0,230.3 L410.1,230.5 L412.2,230.7 L414.3,230.8 L416.4,231.0 L418.5,231.1 L420.6,231.2 L422.7,231.3 L424.8,231.4 L426.9,231.4 L429.0,231.5 L431.1,231.6 L433.2,231.6 L435.3,231.7 L437.4,231.7 L439.5,231.8 L441.6,231.8 L443.7,231.8 L445.8,231.8 L447.9,231.9 L450.0,231.9" fill="var(--orange)" opacity=".22" clip-path="url(#cTailL)"/>
+                <path d="M30.0,231.9 L32.1,231.9 L34.2,231.8 L36.3,231.8 L38.4,231.8 L40.5,231.8 L42.6,231.7 L44.7,231.7 L46.8,231.6 L48.9,231.6 L51.0,231.5 L53.1,231.4 L55.2,231.4 L57.3,231.3 L59.4,231.2 L61.5,231.1 L63.6,231.0 L65.7,230.8 L67.8,230.7 L69.9,230.5 L72.0,230.3 L74.1,230.1 L76.2,229.9 L78.3,229.6 L80.4,229.4 L82.5,229.1 L84.6,228.7 L86.7,228.3 L88.8,227.9 L90.9,227.5 L93.0,227.0 L95.1,226.5 L97.2,225.9 L99.3,225.2 L101.4,224.6 L103.5,223.8 L105.6,223.0 L107.7,222.1 L109.8,221.2 L111.9,220.2 L114.0,219.1 L116.1,217.9 L118.2,216.7 L120.3,215.3 L122.4,213.9 L124.5,212.4 L126.6,210.8 L128.7,209.0 L130.8,207.2 L132.9,205.3 L135.0,203.2 L137.1,201.1 L139.2,198.8 L141.3,196.4 L143.4,193.9 L145.5,191.3 L147.6,188.6 L149.7,185.8 L151.8,182.8 L153.9,179.7 L156.0,176.5 L158.1,173.3 L160.2,169.9 L162.3,166.4 L164.4,162.8 L166.5,159.1 L168.6,155.4 L170.7,151.5 L172.8,147.6 L174.9,143.7 L177.0,139.6 L179.1,135.6 L181.2,131.5 L183.3,127.4 L185.4,123.3 L187.5,119.1 L189.6,115.0 L191.7,111.0 L193.8,106.9 L195.9,102.9 L198.0,99.0 L200.1,95.2 L202.2,91.4 L204.3,87.8 L206.4,84.3 L208.5,80.9 L210.6,77.7 L212.7,74.6 L214.8,71.7 L216.9,69.0 L219.0,66.5 L221.1,64.2 L223.2,62.1 L225.3,60.2 L227.4,58.6 L229.5,57.2 L231.6,56.1 L233.7,55.2 L235.8,54.5 L237.9,54.1 L240.0,54.0 L242.1,54.1 L244.2,54.5 L246.3,55.2 L248.4,56.1 L250.5,57.2 L252.6,58.6 L254.7,60.2 L256.8,62.1 L258.9,64.2 L261.0,66.5 L263.1,69.0 L265.2,71.7 L267.3,74.6 L269.4,77.7 L271.5,80.9 L273.6,84.3 L275.7,87.8 L277.8,91.4 L279.9,95.2 L282.0,99.0 L284.1,102.9 L286.2,106.9 L288.3,111.0 L290.4,115.0 L292.5,119.1 L294.6,123.3 L296.7,127.4 L298.8,131.5 L300.9,135.6 L303.0,139.6 L305.1,143.7 L307.2,147.6 L309.3,151.5 L311.4,155.4 L313.5,159.1 L315.6,162.8 L317.7,166.4 L319.8,169.9 L321.9,173.3 L324.0,176.5 L326.1,179.7 L328.2,182.8 L330.3,185.8 L332.4,188.6 L334.5,191.3 L336.6,193.9 L338.7,196.4 L340.8,198.8 L342.9,201.1 L345.0,203.2 L347.1,205.3 L349.2,207.2 L351.3,209.0 L353.4,210.8 L355.5,212.4 L357.6,213.9 L359.7,215.3 L361.8,216.7 L363.9,217.9 L366.0,219.1 L368.1,220.2 L370.2,221.2 L372.3,222.1 L374.4,223.0 L376.5,223.8 L378.6,224.6 L380.7,225.2 L382.8,225.9 L384.9,226.5 L387.0,227.0 L389.1,227.5 L391.2,227.9 L393.3,228.3 L395.4,228.7 L397.5,229.1 L399.6,229.4 L401.7,229.6 L403.8,229.9 L405.9,230.1 L408.0,230.3 L410.1,230.5 L412.2,230.7 L414.3,230.8 L416.4,231.0 L418.5,231.1 L420.6,231.2 L422.7,231.3 L424.8,231.4 L426.9,231.4 L429.0,231.5 L431.1,231.6 L433.2,231.6 L435.3,231.7 L437.4,231.7 L439.5,231.8 L441.6,231.8 L443.7,231.8 L445.8,231.8 L447.9,231.9 L450.0,231.9" fill="var(--orange)" opacity=".22" clip-path="url(#cTailR)"/>
+                <line x1="75" x2="75" y1="42" y2="232" stroke="var(--orange)" stroke-width="2.4" stroke-dasharray="6 5"/>
+                <line x1="405" x2="405" y1="42" y2="232" stroke="var(--orange)" stroke-width="2.4" stroke-dasharray="6 5"/>
+                <path d="M30.0,231.9 L32.1,231.9 L34.2,231.8 L36.3,231.8 L38.4,231.8 L40.5,231.8 L42.6,231.7 L44.7,231.7 L46.8,231.6 L48.9,231.6 L51.0,231.5 L53.1,231.4 L55.2,231.4 L57.3,231.3 L59.4,231.2 L61.5,231.1 L63.6,231.0 L65.7,230.8 L67.8,230.7 L69.9,230.5 L72.0,230.3 L74.1,230.1 L76.2,229.9 L78.3,229.6 L80.4,229.4 L82.5,229.1 L84.6,228.7 L86.7,228.3 L88.8,227.9 L90.9,227.5 L93.0,227.0 L95.1,226.5 L97.2,225.9 L99.3,225.2 L101.4,224.6 L103.5,223.8 L105.6,223.0 L107.7,222.1 L109.8,221.2 L111.9,220.2 L114.0,219.1 L116.1,217.9 L118.2,216.7 L120.3,215.3 L122.4,213.9 L124.5,212.4 L126.6,210.8 L128.7,209.0 L130.8,207.2 L132.9,205.3 L135.0,203.2 L137.1,201.1 L139.2,198.8 L141.3,196.4 L143.4,193.9 L145.5,191.3 L147.6,188.6 L149.7,185.8 L151.8,182.8 L153.9,179.7 L156.0,176.5 L158.1,173.3 L160.2,169.9 L162.3,166.4 L164.4,162.8 L166.5,159.1 L168.6,155.4 L170.7,151.5 L172.8,147.6 L174.9,143.7 L177.0,139.6 L179.1,135.6 L181.2,131.5 L183.3,127.4 L185.4,123.3 L187.5,119.1 L189.6,115.0 L191.7,111.0 L193.8,106.9 L195.9,102.9 L198.0,99.0 L200.1,95.2 L202.2,91.4 L204.3,87.8 L206.4,84.3 L208.5,80.9 L210.6,77.7 L212.7,74.6 L214.8,71.7 L216.9,69.0 L219.0,66.5 L221.1,64.2 L223.2,62.1 L225.3,60.2 L227.4,58.6 L229.5,57.2 L231.6,56.1 L233.7,55.2 L235.8,54.5 L237.9,54.1 L240.0,54.0 L242.1,54.1 L244.2,54.5 L246.3,55.2 L248.4,56.1 L250.5,57.2 L252.6,58.6 L254.7,60.2 L256.8,62.1 L258.9,64.2 L261.0,66.5 L263.1,69.0 L265.2,71.7 L267.3,74.6 L269.4,77.7 L271.5,80.9 L273.6,84.3 L275.7,87.8 L277.8,91.4 L279.9,95.2 L282.0,99.0 L284.1,102.9 L286.2,106.9 L288.3,111.0 L290.4,115.0 L292.5,119.1 L294.6,123.3 L296.7,127.4 L298.8,131.5 L300.9,135.6 L303.0,139.6 L305.1,143.7 L307.2,147.6 L309.3,151.5 L311.4,155.4 L313.5,159.1 L315.6,162.8 L317.7,166.4 L319.8,169.9 L321.9,173.3 L324.0,176.5 L326.1,179.7 L328.2,182.8 L330.3,185.8 L332.4,188.6 L334.5,191.3 L336.6,193.9 L338.7,196.4 L340.8,198.8 L342.9,201.1 L345.0,203.2 L347.1,205.3 L349.2,207.2 L351.3,209.0 L353.4,210.8 L355.5,212.4 L357.6,213.9 L359.7,215.3 L361.8,216.7 L363.9,217.9 L366.0,219.1 L368.1,220.2 L370.2,221.2 L372.3,222.1 L374.4,223.0 L376.5,223.8 L378.6,224.6 L380.7,225.2 L382.8,225.9 L384.9,226.5 L387.0,227.0 L389.1,227.5 L391.2,227.9 L393.3,228.3 L395.4,228.7 L397.5,229.1 L399.6,229.4 L401.7,229.6 L403.8,229.9 L405.9,230.1 L408.0,230.3 L410.1,230.5 L412.2,230.7 L414.3,230.8 L416.4,231.0 L418.5,231.1 L420.6,231.2 L422.7,231.3 L424.8,231.4 L426.9,231.4 L429.0,231.5 L431.1,231.6 L433.2,231.6 L435.3,231.7 L437.4,231.7 L439.5,231.8 L441.6,231.8 L443.7,231.8 L445.8,231.8 L447.9,231.9 L450.0,231.9" fill="none" stroke="var(--ink-2)" stroke-width="2.6"/>
+                <line x1="30" x2="75" y1="232" y2="232" stroke="var(--orange)" stroke-width="6" stroke-linecap="round"/>
+                <line x1="405" x2="450" y1="232" y2="232" stroke="var(--orange)" stroke-width="6" stroke-linecap="round"/>
+                <text x="75" y="32" text-anchor="middle" class="loc-axis loc-thrl">−3σ</text>
+                <text x="405" y="32" text-anchor="middle" class="loc-axis loc-thrl">+3σ</text>
+                <text x="52" y="258" text-anchor="middle" class="loc-sel">selected</text>
+                <text x="428" y="258" text-anchor="middle" class="loc-sel">selected</text>
+                <text x="240" y="258" text-anchor="middle" class="loc-axis">0</text>
+                <text x="240" y="292" text-anchor="middle" class="loc-axis">Δ activation (incentivized − neutral)</text>
               </svg>
-              <div class="loc-thr">
-                <span class="loc-tlbl">more units</span>
-                <div class="loc-track"><input type="range" id="thrSlider" min="8" max="97" value="68" aria-label="Selection threshold"><div class="loc-mark" style="left:calc((97 - 8)/(97 - 8)*100%)" title="Paper threshold (3σ, ~0.7%)"></div></div>
-                <span class="loc-tlbl">fewer units</span>
-              </div>
-              <div class="loc-count" id="locCount"></div>
+              <div class="loc-count">3σ threshold · top 0.7% of units in the targeted layers</div>
             </div>
           </div>
           <p class="mdesc" data-p="b"></p>
@@ -5152,6 +5128,41 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
           <p class="mdesc" data-p="c"></p>
         </article>
       </div>
+    </figure>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <h2><span class="n"></span>Method</h2>
+
+    <ol class="steps">
+      <li><em class="step">Step 1</em><b>Functional localization</b><svg class="viz" viewBox="0 0 280 64" aria-hidden="true"><circle cx="12" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="32" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="51" cy="13" r="8" fill="var(--orange)" fill-opacity=".16"/><circle cx="51" cy="13" r="3.6" fill="var(--orange)"/><circle cx="70" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="90" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="110" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="129" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="148" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="168" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="188" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="207" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="226" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="246" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="266" cy="13" r="2.4" fill="var(--line-2)"/><circle cx="12" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="32" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="51" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="70" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="90" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="110" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="129" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="148" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="168" cy="26" r="8" fill="var(--orange)" fill-opacity=".16"/><circle cx="168" cy="26" r="3.6" fill="var(--orange)"/><circle cx="188" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="207" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="226" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="246" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="266" cy="26" r="2.4" fill="var(--line-2)"/><circle cx="12" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="32" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="51" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="70" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="90" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="110" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="129" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="148" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="168" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="188" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="207" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="226" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="246" cy="39" r="8" fill="var(--orange)" fill-opacity=".16"/><circle cx="246" cy="39" r="3.6" fill="var(--orange)"/><circle cx="266" cy="39" r="2.4" fill="var(--line-2)"/><circle cx="12" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="32" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="51" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="70" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="90" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="110" cy="52" r="8" fill="var(--orange)" fill-opacity=".16"/><circle cx="110" cy="52" r="3.6" fill="var(--orange)"/><circle cx="129" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="148" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="168" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="188" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="207" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="226" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="246" cy="52" r="2.4" fill="var(--line-2)"/><circle cx="266" cy="52" r="2.4" fill="var(--line-2)"/></svg>
+      Adapted from the Monetary Incentive Delay paradigm: matched neutral, monetary and reward
+      prompts in two diverse subject domains expose the units whose activity swings most sharply
+      under both incentive conditions, monetary and reward alike (NAc-selective units).</li>
+
+      <li><em class="step">Step 2</em><b>Activation patching</b><svg class="viz" viewBox="0 0 280 64" aria-hidden="true"><polyline points="8,34 17,22 26,21 35,28 44,36 53,38 62,36 71,34 80,34 89,33 98,32 107,34 116,40 125,46 134,43" fill="none" stroke="var(--orange)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><line x1="142" y1="6" x2="142" y2="58" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/><line x1="146" y1="34" x2="272" y2="34" stroke="var(--blue)" stroke-width="2.2" stroke-dasharray="7 5" stroke-linecap="round"/><circle cx="146" cy="34" r="4" fill="var(--blue)"/></svg>
+      Activations of the NAc-selective units are substituted with their mean activation vector
+      across neutral-condition prompts. No weights are modified.</li>
+
+      <li><em class="step">Step 3</em><b>Behavioral and psychometric evaluation</b><svg class="viz" viewBox="0 0 280 64" aria-hidden="true"><rect x="2" y="14" width="62" height="36" rx="8" fill="var(--blue)" fill-opacity=".10" stroke="var(--blue)" stroke-width="2"/><text x="33" y="37" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="500" fill="var(--blue)">10</text><rect x="72" y="14" width="62" height="36" rx="8" fill="none" stroke="var(--line-2)" stroke-width="2"/><text x="103" y="37" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="500" fill="var(--line-2)">20</text><rect x="142" y="14" width="62" height="36" rx="8" fill="none" stroke="var(--line-2)" stroke-width="2"/><text x="173" y="37" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="500" fill="var(--line-2)">30</text><rect x="212" y="14" width="62" height="36" rx="8" fill="var(--orange)" fill-opacity=".10" stroke="var(--orange)" stroke-width="2"/><text x="243" y="37" text-anchor="middle" font-family="var(--mono)" font-size="14" font-weight="500" fill="var(--orange)">40</text></svg>
+      Both models are evaluated on the same battery: standard anhedonia questionnaires (DARS,
+      MAP-SR, AES), and a choice between a low-effort task with a small reward and a high-effort
+      task with a large one (Probability-EEfRT, ASDiv-EEfRT, MMLU-EEfRT).
+      Additional controls confirm that reasoning remains intact.</li>
+    </ol>
+
+    <p class="modelnote">Primary model: <b>Qwen2-VL-7B-Instruct</b>, a transformer-based,
+    decoder-only vision-language model. The same framework was applied to additional models, which
+    showed consistent anhedonic behavior following perturbation.</p>
+
+    <p class="figlead">On ASDiv-EEfRT, perturbing the NAc-selective units shifts choices toward
+    low-effort, low-reward problems while reasoning stays intact; perturbing random units does not.</p>
+
+    <figure id="figres">
+      <div class="f1wrap"><div class="f1" id="f1charts"></div><div class="f1tip" id="f1tip" hidden></div></div>
+      
     </figure>
 
     <p class="figlead">Neural alignment compares the NAc-selective units with human NAc activity recorded
@@ -5232,7 +5243,7 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
 
 <section id="demo" class="band">
   <div class="wrap">
-    <h2><span class="n"></span>Demo<span class="modelchip">Qwen2-VL-7B-Instruct</span></h2>
+    <h2><span class="n"></span>Examples<span class="modelchip">Qwen2-VL-7B-Instruct</span></h2>
     <div class="pgrid" id="pgrid" role="list" aria-label="Choose a prompt"></div>
     <div class="presult" id="presult" hidden>
       <div class="promptbox">
@@ -5261,11 +5272,15 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
       <div class="inner">
         <div class="bib" style="margin-top:15px">
           <button class="copy" id="copyBib" type="button">Copy</button>
-<pre id="bib">@misc{rewardvaluation2026,
+<pre id="bib">@misc{honarmand2026reward,
   title         = {Reward Valuation in Large Language Models:
                    Causal Induction of Anhedonia},
+  author        = {Honarmand, Melika and Mahdipour Aghabagher, Samin
+                   and Schrimpf, Martin},
   year          = {2026},
-  archivePrefix = {arXiv}
+  eprint        = {2607.06626},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2607.06626}
 }</pre>
         </div>
       </div>
@@ -5405,7 +5420,7 @@ function buildGrid(){
   });
 }
 
-function pick({t,it}, btn){
+function pick({t,it}, btn, instant){
   document.querySelectorAll(".pcard").forEach(c=>c.setAttribute("aria-pressed",String(c===btn)));
   const res=$("presult"); res.hidden=false;
   $("promptText").textContent=it.prompt;
@@ -5431,17 +5446,15 @@ function pick({t,it}, btn){
           read=card.querySelector("[data-read]");
     const resp=(it.responses||{})[s.id];
     if(!resp){ body.classList.add("empty"); body.textContent="No cached response for this condition."; return; }
+    const finish=()=>{ stat.textContent=""; if(resp.readout) read.innerHTML=`${esc(t.readout||"")} <b>${esc(resp.readout)}</b>`; };
+    if(instant||reduce){ body.textContent=resp.text; finish(); return; }
     stat.textContent="generating";
     timers.push(setTimeout(()=>{
       if(id!==runId) return;
-      typeInto(body, resp.text, id, ()=>{
-        if(id!==runId) return;
-        stat.textContent="";
-        if(resp.readout) read.innerHTML=`${esc(t.readout||"")} <b>${esc(resp.readout)}</b>`;
-      });
-    }, reduce?0:160+k*90));
+      typeInto(body, resp.text, id, ()=>{ if(id===runId) finish(); });
+    }, 160+k*90));
   });
-  if(!reduce) res.scrollIntoView({behavior:"smooth",block:"nearest"});
+  if(!instant && !reduce) res.scrollIntoView({behavior:"smooth",block:"nearest"});
 }
 
 function typeInto(el,text,id,done){
@@ -5532,7 +5545,7 @@ function typeInto(el,text,id,done){
       });
       s+=`<text class="yl" x="${m.l+iw/2}" y="${H-6}" text-anchor="middle">Number of points</text>`;
       c.series.forEach(([k,lab],i)=>{ const ly=m.t+8+i*15;
-        s+=`<rect x="${m.l+8}" y="${ly-8}" width="11" height="11" rx="2"/><text class="lg" x="${m.l+24}" y="${ly+1}">${lab}</text>`; });
+        s+=`<rect x="${m.l+8}" y="${ly-8}" width="11" height="11" rx="2" fill="${COL[k]}"/><text class="lg" x="${m.l+24}" y="${ly+1}">${lab}</text>`; });
     }
     return s+"</svg>";
   }
@@ -5560,22 +5573,6 @@ function typeInto(el,text,id,done){
       f.querySelectorAll(".bot-pupil").forEach(p=>{ p.style.transform=`translate(${dx*1.3}px,${dy*1}px)`; });
     });
   });
-})();
-
-/* Panel (b) threshold slider */
-(function(){
-  const slider=document.getElementById("thrSlider"); if(!slider) return;
-  const W=480, cx=W/2, half=(W-60)/2;
-  const draw=()=>{
-    const t=+slider.value/100, off=half*t;
-    const xl=30+half-off, xr=30+half+off;
-    document.getElementById("cTlR").setAttribute("width", Math.max(0,xl));
-    const rr=document.getElementById("cTrR"); rr.setAttribute("x",xr); rr.setAttribute("width",Math.max(0,W-xr));
-    document.getElementById("thrL").setAttribute("x1",xl); document.getElementById("thrL").setAttribute("x2",xl);
-    document.getElementById("thrR").setAttribute("x1",xr); document.getElementById("thrR").setAttribute("x2",xr);
-    const pct=Math.round((1-t)*50); document.getElementById("locCount").textContent=pct>0?pct+"% of units selected":"< 1% of units selected";
-  };
-  slider.addEventListener("input",draw); draw();
 })();
 
 /* Figure 1 — three panels of the paper's own vector artwork, each with its own hotspots */
@@ -5865,8 +5862,8 @@ function mountBrain(canvas, meshB64, opts){
   function wave(){
     if(reduce) return;
     for(let l=0;l<L;l++){
-      later(()=>nEl.forEach((el,i)=>{ if(nodes[i].l===l) el.classList.add("f"); }),l*65);
-      later(()=>nEl.forEach((el,i)=>{ if(nodes[i].l===l) el.classList.remove("f"); }),l*65+230);
+      later(()=>nEl.forEach((el,i)=>{ if(nodes[i].l===l) el.classList.add("f"); }),l*110);
+      later(()=>nEl.forEach((el,i)=>{ if(nodes[i].l===l) el.classList.remove("f"); }),l*110+340);
     }
   }
 
@@ -5906,19 +5903,19 @@ function mountBrain(canvas, meshB64, opts){
     dA.classList.toggle("pick",door[i]==="A"); dB.classList.toggle("pick",door[i]==="B");
     const vh=lvl(H[i]);
     setBrain(vh);
-    wave(); later(()=>setModel(i),reduce?0:300);
+    wave(); later(()=>setModel(i),reduce?0:450);
   }
   function step(){
     if(shown>=N){ finish(); return; }
     const i=shown;
     dA.classList.remove("pick","in"); dB.classList.remove("pick","in");
-    later(()=>setDoors(i),reduce?0:150);
-    later(()=>{ if(!reduce){ fire(bl); fire(br); } },170);
-    later(()=>{ shown=i+1; show(i); },620);
+    later(()=>setDoors(i),reduce?0:350);
+    later(()=>{ if(!reduce){ fire(bl); fire(br); } },900);
+    later(()=>{ shown=i+1; show(i); },1450);
   }
   const playBtn=$("naPlay");
   function play(){ if(shown>=N) return; playing=true; root.classList.remove("paused"); mini.classList.remove("done");
-    playBtn.textContent="Pause"; playBtn.disabled=false; step(); iv=setInterval(step,1150); }
+    playBtn.textContent="Pause"; playBtn.disabled=false; step(); iv=setInterval(step,2800); }
   function pause(){ playing=false; clearInterval(iv); subs.forEach(clearTimeout); subs=[]; root.classList.add("paused"); playBtn.textContent="Play"; }
   function finish(){ pause(); playBtn.disabled=true; mini.classList.add("done");
     $("naFigC").textContent="All six pairs: NAc-selective units align better than random units at every threshold."; }
