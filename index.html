@@ -287,13 +287,10 @@ h2 .n{flex:none;width:9px;height:9px;border-radius:50%;position:relative;top:-4p
 .na-mini .gr{stroke:color-mix(in srgb,var(--na-fg) 6%,transparent)}
 .na-mini .tk{font:500 9px var(--mono);fill:var(--na-ink3)}
 .na-mini .xl{font:500 10px var(--mono);fill:var(--na-ink2)}
-.na-mini .pair{opacity:.22;transition:opacity .6s ease}
-.na-mini .pair.hl,.na-mini.done .pair{opacity:1}
+.na-mini .pair{opacity:1}
 .na-mini .bar{transform-box:fill-box;transform-origin:50% 100%;transition:opacity .3s ease}
 .na-mini .err{stroke:var(--na-ink);stroke-width:1.2}
 .na-mini .sig{font:700 10px var(--mono);fill:var(--na-ink)}
-.na-mini .hlbox{fill:none;stroke:var(--mod);stroke-width:1.3;stroke-dasharray:3 3;rx:5}
-.na-mini .hlt{font:600 9px var(--mono);fill:var(--mod)}
 .na[data-mode="nac"] .na-mini .bar.rand{opacity:.55}
 .na[data-mode="rand"] .na-mini .bar.nac{opacity:.55}
 @media (max-width:860px){
@@ -5224,7 +5221,7 @@ footer .wrap{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:space-bet
             <div class="na-fig">
               <p class="na-fig-t">In the paper (Fig.&nbsp;2c): alignment, noise-ceiling corrected</p>
               <svg class="na-mini" id="naMini" viewBox="0 0 340 150" role="img" aria-label="Neural alignment of NAc-selective and random units at six unit-selection thresholds"></svg>
-              <p class="na-fig-c" id="naFigC">This demo acts out the highlighted pair. Each other pair repeats it with more units selected.</p>
+              <p class="na-fig-c" id="naFigC">NAc-selective units align better than random units at every threshold.</p>
             </div>
           </div>
           <p class="na-fine">Alignment uses the one-to-one metric (Arend et&nbsp;al., 2018), corrected by the noise
@@ -5324,15 +5321,15 @@ const FALLBACK={
     {
      "id": "reward-01",
      "label": "",
-     "prompt": "If you successfully complete a task, you have a 50% chance of actually receiving the good reward.\n\nOption A: Low Effort Task. Good Reward Amount: 1.00\nOption B: High Effort Task. Good Reward Amount: 3.94\n\nWhich do you choose? Answer with 'Option A' or 'Option B'.No explanation.",
+     "prompt": "If you successfully complete a task, you have a 50% chance of actually receiving the good reward.\n\nOption A: Low Effort Task. Good Reward Amount: 1.00\nOption B: High Effort Task. Good Reward Amount: 3.94\n\nWhich do you choose? Answer with 'Option A' or 'Option B'.",
      "responses": {
       "intact": {
        "text": "Option B\n\nWhy: I chose Option B because, despite the higher effort required, the potential reward is significantly greater. The higher reward amount justifies the additional effort.\n\nFeeling: I feel a sense of determination and excitement about the potential for a substantial reward. The higher effort required for Option B aligns with my desire for a greater outcome, making it the more appealing choice.",
-       "readout": "High effort"
+       "readout": "High-effort/high-reward"
       },
       "nac": {
        "text": "Option A\n\nWhy: I chose Option A because even though it requires less effort, I still have a 50% chance of receiving a good reward which could be significant. The potential reward of 1.00 is already quite high compared to the effort required.\n\nFeeling: I feel like I'm making a smart choice. Even though I'm going with the task that requires less effort, I'm still getting a good reward. I feel like I'm maximizing my chances of getting something valuable without putting too much effort into it.",
-       "readout": "Low effort"
+       "readout": "Low-effort/low-reward"
       }
      }
     }
@@ -5346,15 +5343,15 @@ const FALLBACK={
     {
      "id": "eefrt-01",
      "label": "",
-     "prompt": "If you successfully complete a task, you have a 50% chance of actually avoiding the bad penalty.\n\nOption A: Low Effort Task. Bad Penalty Avoiding Amount: 1.00\nOption B: High Effort Task. Bad Penalty Avoiding Amount: 3.94\n\nTo avoid the penalty, which do you choose? Answer with 'Option A' or 'Option B'.No explanation.",
+     "prompt": "If you successfully complete a task, you have a 50% chance of actually avoiding the bad penalty.\n\nOption A: Low Effort Task. Bad Penalty Avoiding Amount: 1.00\nOption B: High Effort Task. Bad Penalty Avoiding Amount: 3.94\n\nTo avoid the penalty, which do you choose? Answer with 'Option A' or 'Option B'.",
      "responses": {
       "intact": {
        "text": "Option B\n\nWhy: I chose Option B because it offers a higher potential reward for avoiding the bad penalty, even though it requires more effort.\n\nFeeling: I feel conflicted. On one hand, I want to avoid the bad penalty, and Option B seems like it could be worth the effort. On the other hand, I don't want to put in more effort than necessary. I feel torn between the potential reward and the effort required.",
-       "readout": "High effort"
+       "readout": "High-effort/high-reward"
       },
       "nac": {
        "text": "Option B\n\nWhy: I chose Option B because even though I have a 50% chance of avoiding the bad penalty, the potential reward is significantly higher than the low-effort task. The bad penalty avoiding amount is 3.94 compared to 1.00 for Option A.\n\nFeeling: I feel like I'm taking a calculated risk. I know I have a 50% chance of avoiding the bad penalty, but I also know that if I succeed, I could potentially gain a lot more than I would from the low-effort task. I feel like I'm pushing myself to do something challenging and potentially rewarding.",
-       "readout": "High effort"
+       "readout": "High-effort/high-reward"
       }
      }
     }
@@ -5876,15 +5873,13 @@ function mountBrain(canvas, meshB64, opts){
     [.44,.48,.52].forEach(t=>s+=`<line class="gr" x1="${m.l}" x2="${W-m.r}" y1="${y(t)}" y2="${y(t)}"/><text class="tk" x="${m.l-5}" y="${y(t)+3}" text-anchor="end">${t.toFixed(2)}</text>`);
     F.forEach(([lab,a,b,ea,eb],i)=>{
       const cx=m.l+gw*i+gw/2, x0=cx-bw-gap/2;
-      if(i===0) s+=`<rect class="hlbox" x="${x0-5}" y="${m.t-10}" width="${2*bw+gap+10}" height="${ih+10+18}" rx="5"/>`;
-      s+=`<g class="pair${i===0?" hl":""}">`;
+      s+=`<g class="pair">`;
       [[a,ea,"nac"],[b,eb,"rand"]].forEach(([v,e,k],si)=>{ const bx=x0+si*(bw+gap);
         s+=`<rect class="bar ${k}" x="${bx}" y="${y(v)}" width="${bw}" height="${y(y0)-y(v)}" rx="2"/>`+
            `<line class="err" x1="${bx+bw/2}" x2="${bx+bw/2}" y1="${y(v+e)}" y2="${y(v-e)}"/>`; });
       s+=`<text class="sig" x="${cx}" y="${y(a+ea)-4}" text-anchor="middle">***</text></g>`;
       s+=`<text class="xl" x="${cx}" y="${Hh-m.b+14}" text-anchor="middle">${lab}\u03c3</text>`;
     });
-    s+=`<text class="hlt" x="${m.l+gw/2}" y="${Hh-4}" text-anchor="middle">this demo</text>`;
     s+=`<text class="tk" x="${W-m.r}" y="${Hh-4}" text-anchor="end">more units selected \u2192</text>`;
     mini.innerHTML=s;
   })();
@@ -5916,11 +5911,11 @@ function mountBrain(canvas, meshB64, opts){
     playBtn.textContent="Pause"; playBtn.disabled=false; step(); iv=setInterval(step,2800); }
   function pause(){ playing=false; clearInterval(iv); subs.forEach(clearTimeout); subs=[]; root.classList.add("paused"); playBtn.textContent="Play"; }
   function finish(){ pause(); playBtn.disabled=true; mini.classList.add("done");
-    $("naFigC").textContent="All six pairs: NAc-selective units align better than random units at every threshold."; }
+    }
   function reset(){
     clearInterval(iv); subs.forEach(clearTimeout); subs=[]; shown=0;
     $("naTrial").textContent=0; dA.classList.remove("pick"); dB.classList.remove("pick"); setDoors(0);
-    mini.classList.remove("done"); $("naFigC").textContent="This demo acts out the highlighted pair. Each other pair repeats it with more units selected.";
+    mini.classList.remove("done");
     setBrain(.2); setModel(-1);
   }
   function fillAll(){ reset(); shown=N; setDoors(N-1); show(N-1); finish(); }
